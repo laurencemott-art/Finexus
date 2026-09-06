@@ -1,0 +1,1203 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Finexus Partners is a specialist search firm focused on FX, payments and financial technology"
+  >
+
+  <title>Finexus Partners — FX · Payments · Technology</title>
+
+  <style>
+
+    /* =========================================
+       FINEXUS — CORE SETTINGS
+       ========================================= */
+
+    :root {
+      --green: #002a1e;
+      --green-light: #073b2c;
+      --cream: #f7f2e8;
+      --gold: #c7a45c;
+      --gold-light: #d8bd7e;
+      --cream-muted: rgba(247, 242, 232, 0.68);
+      --cream-faint: rgba(247, 242, 232, 0.12);
+      --border: rgba(247, 242, 232, 0.16);
+
+      --max-width: 1240px;
+      --side-padding: clamp(24px, 5vw, 72px);
+    }
+
+
+    /* =========================================
+       RESET
+       ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--green);
+      color: var(--cream);
+      font-family:
+        Inter,
+        Helvetica Neue,
+        Helvetica,
+        Arial,
+        sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* =========================================
+       LAYOUT
+       ========================================= */
+
+    .container {
+      width: min(
+        calc(100% - (var(--side-padding) * 2)),
+        var(--max-width)
+      );
+
+      margin: 0 auto;
+    }
+
+
+    /* =========================================
+       NAVIGATION
+       ========================================= */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0, 42, 30, 0.96),
+          rgba(0, 42, 30, 0.72),
+          transparent
+        );
+
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      width: min(
+        calc(100% - (var(--side-padding) * 2)),
+        var(--max-width)
+      );
+
+      margin: 0 auto;
+
+      min-height: 92px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--cream-muted);
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--cream);
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--gold);
+
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+
+    /* =========================================
+       HERO
+       ========================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding-top: 130px;
+      padding-bottom: 100px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 650px;
+      height: 650px;
+
+      right: -250px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      border-radius: 50%;
+
+      border: 1px solid
+        rgba(199, 164, 92, 0.14);
+
+      box-shadow:
+        0 0 0 80px rgba(199, 164, 92, 0.025),
+        0 0 0 160px rgba(199, 164, 92, 0.018);
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 1050px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-bottom: 30px;
+
+      color: var(--gold);
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 30px;
+      height: 1px;
+
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      max-width: 1000px;
+
+      font-size: clamp(
+        58px,
+        8.5vw,
+        126px
+      );
+
+      font-weight: 400;
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .hero-bottom {
+      margin-top: 60px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 50px;
+    }
+
+    .hero-description {
+      max-width: 510px;
+
+      color: var(--cream-muted);
+
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .hero-cta {
+      flex-shrink: 0;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+
+      padding: 16px 22px;
+
+      border: 1px solid var(--gold);
+
+      color: var(--cream);
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .button:hover {
+      background: var(--gold);
+      color: var(--green);
+
+      transform: translateY(-2px);
+    }
+
+    .button-arrow {
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 0;
+
+      transition: transform 0.25s ease;
+    }
+
+    .button:hover .button-arrow {
+      color: var(--green);
+      transform: translateX(4px);
+    }
+
+
+    /* =========================================
+       INTRO
+       ========================================= */
+
+    .intro {
+      padding: 150px 0;
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      color: var(--gold);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .intro-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(180px, 0.65fr)
+        minmax(300px, 1.35fr);
+
+      gap: 80px;
+    }
+
+    .intro-heading {
+      max-width: 800px;
+
+      font-size: clamp(
+        40px,
+        5vw,
+        72px
+      );
+
+      font-weight: 400;
+      line-height: 1.04;
+
+      letter-spacing: -0.045em;
+    }
+
+    .intro-heading span {
+      color: var(--gold);
+    }
+
+
+    /* =========================================
+       EXPERTISE
+       ========================================= */
+
+    .expertise {
+      padding: 150px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 40px;
+
+      margin-bottom: 70px;
+    }
+
+    .section-title {
+      max-width: 750px;
+
+      font-size: clamp(
+        38px,
+        5vw,
+        70px
+      );
+
+      font-weight: 400;
+      line-height: 1;
+
+      letter-spacing: -0.045em;
+    }
+
+    .section-description {
+      max-width: 420px;
+
+      color: var(--cream-muted);
+
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .expertise-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      border-top: 1px solid var(--border);
+    }
+
+    .expertise-card {
+      padding: 42px 35px 50px;
+
+      min-height: 310px;
+
+      border-right: 1px solid var(--border);
+
+      transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .expertise-card:first-child {
+      border-left: 1px solid var(--border);
+    }
+
+    .expertise-card:hover {
+      background: var(--green-light);
+    }
+
+    .card-number {
+      color: var(--gold);
+
+      font-size: 11px;
+      letter-spacing: 0.15em;
+    }
+
+    .card-title {
+      margin-top: 80px;
+
+      font-size: 28px;
+      font-weight: 400;
+
+      letter-spacing: -0.025em;
+    }
+
+    .card-description {
+      margin-top: 18px;
+
+      color: var(--cream-muted);
+
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+
+    /* =========================================
+       APPROACH
+       ========================================= */
+
+    .approach {
+      padding: 150px 0;
+
+      background: #073327;
+    }
+
+    .approach-intro {
+      max-width: 850px;
+
+      margin-bottom: 90px;
+    }
+
+    .approach-intro h2 {
+      margin-top: 22px;
+
+      font-size: clamp(
+        42px,
+        5.5vw,
+        76px
+      );
+
+      font-weight: 400;
+
+      line-height: 1;
+
+      letter-spacing: -0.05em;
+    }
+
+    .approach-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 1px;
+
+      background: var(--border);
+    }
+
+    .approach-card {
+      background: #073327;
+
+      padding: 55px;
+      min-height: 360px;
+    }
+
+    .approach-card-label {
+      color: var(--gold);
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+    }
+
+    .approach-card h3 {
+      margin-top: 85px;
+
+      font-size: 34px;
+      font-weight: 400;
+
+      letter-spacing: -0.035em;
+    }
+
+    .approach-card p {
+      max-width: 470px;
+
+      margin-top: 20px;
+
+      color: var(--cream-muted);
+
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+
+    /* =========================================
+       CONTACT
+       ========================================= */
+
+    .contact {
+      padding: 180px 0;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::after {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -250px;
+      bottom: -250px;
+
+      border-radius: 50%;
+
+      border: 1px solid
+        rgba(199, 164, 92, 0.14);
+
+      pointer-events: none;
+    }
+
+    .contact-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 1000px;
+    }
+
+    .contact h2 {
+      margin-top: 25px;
+
+      font-size: clamp(
+        50px,
+        7vw,
+        100px
+      );
+
+      font-weight: 400;
+
+      line-height: 0.96;
+
+      letter-spacing: -0.055em;
+    }
+
+    .contact h2 span {
+      color: var(--gold);
+    }
+
+    .contact-description {
+      max-width: 570px;
+
+      margin-top: 45px;
+
+      color: var(--cream-muted);
+
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .contact-button {
+      margin-top: 42px;
+    }
+
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .footer-copy,
+    .footer-specialisms {
+      color: rgba(247, 242, 232, 0.45);
+
+      font-size: 10px;
+      letter-spacing: 0.13em;
+
+      text-transform: uppercase;
+    }
+
+    .footer-specialisms {
+      color: var(--gold);
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+       ========================================= */
+
+    @media (max-width: 800px) {
+
+      .nav-inner {
+        min-height: 78px;
+      }
+
+      .nav-links {
+        gap: 16px;
+        font-size: 9px;
+      }
+
+      .logo {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 160px;
+        padding-bottom: 100px;
+      }
+
+      .hero::before {
+        width: 400px;
+        height: 400px;
+
+        right: -250px;
+      }
+
+      .hero h1 {
+        font-size: clamp(
+          52px,
+          14vw,
+          90px
+        );
+      }
+
+      .hero-bottom {
+        display: block;
+
+        margin-top: 45px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-cta {
+        margin-top: 35px;
+      }
+
+      .intro,
+      .expertise,
+      .approach {
+        padding: 100px 0;
+      }
+
+      .intro-grid {
+        display: block;
+      }
+
+      .intro-grid .section-label {
+        margin-bottom: 40px;
+      }
+
+      .section-header {
+        display: block;
+        margin-bottom: 55px;
+      }
+
+      .section-description {
+        margin-top: 30px;
+      }
+
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .expertise-card {
+        border-left: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .card-title {
+        margin-top: 55px;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .approach-card {
+        padding: 40px;
+        min-height: 300px;
+      }
+
+      .approach-card h3 {
+        margin-top: 55px;
+      }
+
+      .contact {
+        padding: 120px 0;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+
+      .footer-specialisms {
+        margin-top: 15px;
+      }
+    }
+
+
+    @media (max-width: 520px) {
+
+      :root {
+        --side-padding: 22px;
+      }
+
+      .nav-links a:nth-child(2) {
+        display: none;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      .intro-heading {
+        font-size: 43px;
+      }
+
+      .section-title {
+        font-size: 42px;
+      }
+
+      .approach-card {
+        padding: 30px;
+      }
+
+      .contact h2 {
+        font-size: 54px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ======================================
+       NAVIGATION
+       ====================================== -->
+
+  <header class="nav">
+
+    <div class="nav-inner">
+
+      <a href="#" class="logo">
+        FINEXUS <span>PARTNERS</span>
+      </a>
+
+      <nav class="nav-links">
+
+        <a href="#expertise">
+          Expertise
+        </a>
+
+        <a href="#approach">
+          Approach
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ======================================
+       HERO
+       ====================================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            Specialist Search · London & Global
+          </div>
+
+          <h1>
+            Where exceptional
+            <em>talent</em> meets the
+            next opportunity
+          </h1>
+
+          <div class="hero-bottom">
+
+            <p class="hero-description">
+              Finexus Partners is a specialist search firm
+              focused on FX, payments and financial
+              technology. We connect ambitious firms with
+              people who understand the markets they move in.
+            </p>
+
+            <div class="hero-cta">
+
+              <a
+                href="#contact"
+                class="button"
+              >
+                Start a conversation
+
+                <span class="button-arrow">
+                  →
+                </span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         INTRO
+         ====================================== -->
+
+    <section class="intro">
+
+      <div class="container">
+
+        <div class="intro-grid">
+
+          <div>
+            <div class="section-label">
+              Market Intelligence
+            </div>
+          </div>
+
+          <div>
+
+            <h2 class="intro-heading">
+              Built for the people
+              <span>shaping how money moves</span>
+            </h2>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         EXPERTISE
+         ====================================== -->
+
+    <section
+      class="expertise"
+      id="expertise"
+    >
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <h2 class="section-title">
+            The right people for a
+            market that never stands still
+          </h2>
+
+          <p class="section-description">
+            Focused coverage across the commercial,
+            technical and leadership roles that underpin
+            modern financial infrastructure
+          </p>
+
+        </div>
+
+
+        <div class="expertise-grid">
+
+
+          <article class="expertise-card">
+
+            <div class="card-number">
+              01
+            </div>
+
+            <h3 class="card-title">
+              FX Markets
+            </h3>
+
+            <p class="card-description">
+              Corporate and institutional FX,
+              trading, sales, product and
+              market infrastructure
+            </p>
+
+          </article>
+
+
+          <article class="expertise-card">
+
+            <div class="card-number">
+              02
+            </div>
+
+            <h3 class="card-title">
+              Payments
+            </h3>
+
+            <p class="card-description">
+              Acquiring, issuing, embedded finance,
+              payment technology and the infrastructure
+              behind modern money movement
+            </p>
+
+          </article>
+
+
+          <article class="expertise-card">
+
+            <div class="card-number">
+              03
+            </div>
+
+            <h3 class="card-title">
+              Leadership & Growth
+            </h3>
+
+            <p class="card-description">
+              Commercial leaders, senior specialists
+              and operators ready to build the next
+              phase of ambitious businesses
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         APPROACH
+         ====================================== -->
+
+    <section
+      class="approach"
+      id="approach"
+    >
+
+      <div class="container">
+
+        <div class="approach-intro">
+
+          <div class="section-label">
+            The Finexus Approach
+          </div>
+
+          <h2>
+            A better conversation
+            for every move
+          </h2>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+
+          <article class="approach-card">
+
+            <div class="approach-card-label">
+              For Clients
+            </div>
+
+            <h3>
+              Precision over volume
+            </h3>
+
+            <p>
+              A considered search process grounded
+              in a genuine understanding of your
+              market, team and ambition
+            </p>
+
+          </article>
+
+
+          <article class="approach-card">
+
+            <div class="approach-card-label">
+              For Candidates
+            </div>
+
+            <h3>
+              The next move should matter
+            </h3>
+
+            <p>
+              Long-term counsel and well-matched
+              opportunities for people who want
+              their next move to have meaning
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         CONTACT
+         ====================================== -->
+
+    <section
+      class="contact"
+      id="contact"
+    >
+
+      <div class="container">
+
+        <div class="contact-content">
+
+          <div class="section-label">
+            Let's Talk
+          </div>
+
+          <h2>
+            A mandate, a move,
+            or a <span>market conversation</span>
+          </h2>
+
+          <p class="contact-description">
+            Speak with Finexus Partners about the people
+            and opportunities shaping the future of FX,
+            payments and financial technology
+          </p>
+
+          <div class="contact-button">
+
+            <a
+              href="mailto:hello@finexuspartners.com"
+              class="button"
+            >
+              Get in touch
+
+              <span class="button-arrow">
+                →
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ======================================
+       FOOTER
+       ====================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div class="footer-copy">
+          © 2026 Finexus Partners
+        </div>
+
+        <div class="footer-specialisms">
+          FX · Payments · Technology
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
