@@ -28,7 +28,6 @@
       --gold: #c7a45c;
       --gold-light: #d8bd7e;
       --cream-muted: rgba(247, 242, 232, 0.68);
-      --cream-faint: rgba(247, 242, 232, 0.12);
       --border: rgba(247, 242, 232, 0.16);
 
       --max-width: 1240px;
@@ -55,7 +54,7 @@
       color: var(--cream);
       font-family:
         Inter,
-        Helvetica Neue,
+        "Helvetica Neue",
         Helvetica,
         Arial,
         sans-serif;
@@ -66,11 +65,6 @@
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
     }
 
 
@@ -102,7 +96,7 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(0, 42, 30, 0.96),
+          rgba(0, 42, 30, 0.97),
           rgba(0, 42, 30, 0.72),
           transparent
         );
@@ -207,8 +201,7 @@
 
       border-radius: 50%;
 
-      border: 1px solid
-        rgba(199, 164, 92, 0.14);
+      border: 1px solid rgba(199, 164, 92, 0.14);
 
       box-shadow:
         0 0 0 80px rgba(199, 164, 92, 0.025),
@@ -278,7 +271,7 @@
     }
 
     .hero-description {
-      max-width: 510px;
+      max-width: 540px;
 
       color: var(--cream-muted);
 
@@ -346,16 +339,6 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .section-label {
-      color: var(--gold);
-
-      font-size: 10px;
-      font-weight: 600;
-
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
     .intro-grid {
       display: grid;
 
@@ -364,6 +347,16 @@
         minmax(300px, 1.35fr);
 
       gap: 80px;
+    }
+
+    .section-label {
+      color: var(--gold);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
 
     .intro-heading {
@@ -405,7 +398,7 @@
     }
 
     .section-title {
-      max-width: 750px;
+      max-width: 760px;
 
       font-size: clamp(
         38px,
@@ -490,16 +483,18 @@
     .approach {
       padding: 150px 0;
 
-      background: #073327;
+      background: var(--green-light);
     }
 
     .approach-intro {
-      max-width: 850px;
+      max-width: 900px;
 
       margin-bottom: 90px;
     }
 
     .approach-intro h2 {
+      max-width: 850px;
+
       margin-top: 22px;
 
       font-size: clamp(
@@ -515,11 +510,26 @@
       letter-spacing: -0.05em;
     }
 
+    .approach-intro h2 span {
+      color: var(--gold);
+    }
+
+    .approach-lead {
+      max-width: 650px;
+
+      margin-top: 35px;
+
+      color: var(--cream-muted);
+
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
     .approach-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(2, 1fr);
+        repeat(3, 1fr);
 
       gap: 1px;
 
@@ -527,41 +537,176 @@
     }
 
     .approach-card {
-      background: #073327;
+      background: var(--green-light);
 
-      padding: 55px;
-      min-height: 360px;
+      padding: 45px 38px 50px;
+
+      min-height: 380px;
     }
 
-    .approach-card-label {
+    .approach-card-number {
       color: var(--gold);
 
       font-size: 11px;
-      font-weight: 600;
-
-      letter-spacing: 0.18em;
-
-      text-transform: uppercase;
+      letter-spacing: 0.15em;
     }
 
     .approach-card h3 {
       margin-top: 85px;
 
-      font-size: 34px;
+      font-size: 28px;
       font-weight: 400;
 
-      letter-spacing: -0.035em;
+      line-height: 1.1;
+
+      letter-spacing: -0.03em;
     }
 
     .approach-card p {
-      max-width: 470px;
+      max-width: 400px;
 
       margin-top: 20px;
 
       color: var(--cream-muted);
 
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.75;
+    }
+
+
+    /* =========================================
+       TEAM
+       ========================================= */
+
+    .team {
+      padding: 150px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .team-intro {
+      display: grid;
+
+      grid-template-columns:
+        minmax(180px, 0.65fr)
+        minmax(300px, 1.35fr);
+
+      gap: 80px;
+
+      margin-bottom: 90px;
+    }
+
+    .team-heading {
+      max-width: 800px;
+
+      font-size: clamp(
+        40px,
+        5vw,
+        70px
+      );
+
+      font-weight: 400;
+
+      line-height: 1;
+
+      letter-spacing: -0.045em;
+    }
+
+    .team-heading span {
+      color: var(--gold);
+    }
+
+    .team-description {
+      max-width: 650px;
+
+      margin-top: 30px;
+
+      color: var(--cream-muted);
+
+      font-size: 16px;
+
+      line-height: 1.8;
+    }
+
+    .team-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 1px;
+
+      background: var(--border);
+    }
+
+    .team-card {
+      background: var(--green);
+
+      padding: 40px 35px 45px;
+
+      min-height: 390px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-card-name {
+      font-size: 27px;
+
+      font-weight: 400;
+
+      letter-spacing: -0.025em;
+    }
+
+    .team-card-role {
+      margin-top: 10px;
+
+      color: var(--gold);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 0.13em;
+
+      text-transform: uppercase;
+    }
+
+    .team-card-bio {
+      margin-top: 55px;
+
+      color: var(--cream-muted);
+
+      font-size: 14px;
+
+      line-height: 1.75;
+    }
+
+    .team-card-contact {
+      margin-top: auto;
+
+      padding-top: 35px;
+    }
+
+    .team-card-contact a {
+      display: block;
+
+      color: var(--cream);
+
+      font-size: 12px;
+
+      transition: color 0.25s ease;
+    }
+
+    .team-card-contact a:hover {
+      color: var(--gold);
+    }
+
+    .team-card-phone {
+      margin-top: 7px;
+
+      color: var(--cream-muted);
+
+      font-size: 12px;
     }
 
 
@@ -574,6 +719,8 @@
 
       position: relative;
       overflow: hidden;
+
+      border-top: 1px solid var(--border);
     }
 
     .contact::after {
@@ -589,8 +736,7 @@
 
       border-radius: 50%;
 
-      border: 1px solid
-        rgba(199, 164, 92, 0.14);
+      border: 1px solid rgba(199, 164, 92, 0.14);
 
       pointer-events: none;
     }
@@ -603,6 +749,8 @@
     }
 
     .contact h2 {
+      max-width: 1000px;
+
       margin-top: 25px;
 
       font-size: clamp(
@@ -650,7 +798,9 @@
 
     .footer-inner {
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 30px;
@@ -661,6 +811,7 @@
       color: rgba(247, 242, 232, 0.45);
 
       font-size: 10px;
+
       letter-spacing: 0.13em;
 
       text-transform: uppercase;
@@ -675,6 +826,32 @@
        RESPONSIVE
        ========================================= */
 
+    @media (max-width: 900px) {
+
+      .expertise-grid,
+      .approach-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .expertise-card {
+        border-left: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .team-card {
+        min-height: 340px;
+      }
+
+      .team-intro,
+      .intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+    }
+
+
     @media (max-width: 800px) {
 
       .nav-inner {
@@ -683,6 +860,7 @@
 
       .nav-links {
         gap: 16px;
+
         font-size: 9px;
       }
 
@@ -692,6 +870,7 @@
 
       .hero {
         min-height: auto;
+
         padding-top: 160px;
         padding-bottom: 100px;
       }
@@ -727,20 +906,14 @@
 
       .intro,
       .expertise,
-      .approach {
+      .approach,
+      .team {
         padding: 100px 0;
-      }
-
-      .intro-grid {
-        display: block;
-      }
-
-      .intro-grid .section-label {
-        margin-bottom: 40px;
       }
 
       .section-header {
         display: block;
+
         margin-bottom: 55px;
       }
 
@@ -748,30 +921,26 @@
         margin-top: 30px;
       }
 
-      .expertise-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .expertise-card {
-        border-left: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-      }
-
       .card-title {
         margin-top: 55px;
       }
 
-      .approach-grid {
-        grid-template-columns: 1fr;
+      .approach-intro {
+        margin-bottom: 60px;
       }
 
       .approach-card {
         padding: 40px;
-        min-height: 300px;
+
+        min-height: 330px;
       }
 
       .approach-card h3 {
-        margin-top: 55px;
+        margin-top: 60px;
+      }
+
+      .team-intro {
+        margin-bottom: 60px;
       }
 
       .contact {
@@ -814,7 +983,16 @@
         font-size: 42px;
       }
 
-      .approach-card {
+      .approach-intro h2 {
+        font-size: 48px;
+      }
+
+      .team-heading {
+        font-size: 43px;
+      }
+
+      .approach-card,
+      .team-card {
         padding: 30px;
       }
 
@@ -856,6 +1034,10 @@
           Approach
         </a>
 
+        <a href="#team">
+          Team
+        </a>
+
         <a href="#contact">
           Contact
         </a>
@@ -894,8 +1076,10 @@
             <p class="hero-description">
               Finexus Partners is a specialist search firm
               focused on FX, payments and financial
-              technology. We connect ambitious firms with
-              people who understand the markets they move in.
+              technology
+              <br><br>
+              We connect ambitious firms with people who
+              understand the markets they move in
             </p>
 
             <div class="hero-cta">
@@ -973,9 +1157,9 @@
           </h2>
 
           <p class="section-description">
-            Focused coverage across the commercial,
-            technical and leadership roles that underpin
-            modern financial infrastructure
+            Our team combines first-hand experience
+            across FX, payments and financial technology
+            with a focused approach to specialist search
           </p>
 
         </div>
@@ -1062,13 +1246,20 @@
         <div class="approach-intro">
 
           <div class="section-label">
-            The Finexus Approach
+            Our Approach
           </div>
 
           <h2>
-            A better conversation
-            for every move
+            Recruitment advice
+            with the <span>long view</span>
+            in mind
           </h2>
+
+          <p class="approach-lead">
+            The best outcomes come from thoughtful
+            conversations, honest advice and partnerships
+            built to last
+          </p>
 
         </div>
 
@@ -1078,18 +1269,20 @@
 
           <article class="approach-card">
 
-            <div class="approach-card-label">
-              For Clients
+            <div class="approach-card-number">
+              01
             </div>
 
             <h3>
-              Precision over volume
+              Consultative by nature
             </h3>
 
             <p>
-              A considered search process grounded
-              in a genuine understanding of your
-              market, team and ambition
+              We start with the context behind the brief
+              Understanding your business, your team,
+              your ambitions and the market around you
+              allows us to make recommendations that are
+              considered, relevant and practical
             </p>
 
           </article>
@@ -1097,19 +1290,202 @@
 
           <article class="approach-card">
 
-            <div class="approach-card-label">
-              For Candidates
+            <div class="approach-card-number">
+              02
             </div>
 
             <h3>
-              The next move should matter
+              Best intentions, always
             </h3>
 
             <p>
-              Long-term counsel and well-matched
-              opportunities for people who want
-              their next move to have meaning
+              Our advice is direct, discreet and grounded
+              in what we believe is right for both sides
+              We take the time to understand motivations,
+              expectations and long-term objectives so that
+              every conversation has genuine purpose
             </p>
+
+          </article>
+
+
+          <article class="approach-card">
+
+            <div class="approach-card-number">
+              03
+            </div>
+
+            <h3>
+              Relationships that endure
+            </h3>
+
+            <p>
+              The strongest partnerships are built over time
+              We are here for the mandate that matters today,
+              the career move that comes next and the market
+              conversation that may lead somewhere further
+              down the line
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         TEAM
+         ====================================== -->
+
+    <section
+      class="team"
+      id="team"
+    >
+
+      <div class="container">
+
+        <div class="team-intro">
+
+          <div>
+            <div class="section-label">
+              The Finexus Team
+            </div>
+          </div>
+
+          <div>
+
+            <h2 class="team-heading">
+              Specialist knowledge
+              <span>Market perspective</span>
+            </h2>
+
+            <p class="team-description">
+              Our team combines first-hand experience
+              of FX and payments with a focused approach
+              to specialist search
+              <br><br>
+              We understand the markets we recruit within,
+              the people who shape them and the businesses
+              looking to build what comes next
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="team-grid">
+
+
+          <article class="team-card">
+
+            <div class="team-card-name">
+              Emma Salmon
+            </div>
+
+            <div class="team-card-role">
+              Senior Leadership · FX & Payments
+            </div>
+
+            <p class="team-card-bio">
+              Emma brings extensive experience across
+              FX and payments to senior appointments
+              at every level
+              <br><br>
+              Her focus is on leadership and C-level
+              mandates, partnering with businesses to
+              identify the individuals capable of shaping
+              their next stage of growth
+            </p>
+
+            <div class="team-card-contact">
+
+              <a href="mailto:emma@finexuspartners.com">
+                emma@finexuspartners.com
+              </a>
+
+              <div class="team-card-phone">
+                07730 618536
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="team-card">
+
+            <div class="team-card-name">
+              Will Palmer
+            </div>
+
+            <div class="team-card-role">
+              Front Office · B2B & FX Sales
+            </div>
+
+            <p class="team-card-bio">
+              Will began his career in FX and payments
+              sales, giving him first-hand experience
+              of the market he now recruits within
+              <br><br>
+              He specialises in front-office appointments
+              across the global FX and payments industry,
+              covering sales, dealing, trading and
+              commercial leadership
+            </p>
+
+            <div class="team-card-contact">
+
+              <a href="mailto:will@finexuspartners.com">
+                will@finexuspartners.com
+              </a>
+
+              <div class="team-card-phone">
+                07810 308392
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="team-card">
+
+            <div class="team-card-name">
+              Tom Fisher
+            </div>
+
+            <div class="team-card-role">
+              Middle & Back Office
+            </div>
+
+            <p class="team-card-bio">
+              Tom specialises in sales and middle-office
+              appointments across the global FX and
+              payments industry
+              <br><br>
+              With experience delivering appointments
+              from emerging talent through to senior
+              leadership, he brings a detailed understanding
+              of the people and capabilities that keep
+              businesses moving
+            </p>
+
+            <div class="team-card-contact">
+
+              <a href="mailto:tom@finexuspartners.com">
+                tom@finexuspartners.com
+              </a>
+
+              <div class="team-card-phone">
+                07364 237677
+              </div>
+
+            </div>
 
           </article>
 
