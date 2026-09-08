@@ -4,17 +4,15 @@
 <head>
   <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
->
-
-<meta
-name="description"
-content="Finexus Partners is a specialist search firm focused on FX, payments and financial technology"
-
->
+  <meta
+    name="description"
+    content="Finexus Partners is a specialist search firm focused on FX, payments and financial technology"
+  >
 
   <title>Finexus Partners — FX · Payments · Technology</title>
 
@@ -397,7 +395,7 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
 
       gap: 40px;
 
-      margin-bottom: 70px;
+      margin-bottom: 90px;
     }
 
     .section-title {
@@ -424,61 +422,78 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
       line-height: 1.75;
     }
 
+    /*
+       Expertise is intentionally open and borderless.
+       No boxes, cards or numbered labels.
+    */
+
     .expertise-grid {
       display: grid;
 
       grid-template-columns:
         repeat(3, 1fr);
 
+      gap: 70px;
+
       border-top: 1px solid var(--border);
 
-      /* Added bottom border to the full three-card row */
-      border-bottom: 1px solid var(--border);
+      padding-top: 55px;
     }
 
     .expertise-card {
-      padding: 42px 35px 50px;
+      min-height: 250px;
 
-      min-height: 310px;
+      padding: 0 20px 0 0;
 
-      border-right: 1px solid var(--border);
+      position: relative;
 
       transition:
-        background 0.3s ease,
-        transform 0.3s ease;
+        transform 0.3s ease,
+        color 0.3s ease;
     }
 
-    .expertise-card:first-child {
-      border-left: 1px solid var(--border);
+    .expertise-card:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      right: -35px;
+
+      width: 1px;
+      height: 100%;
+
+      background: var(--border);
     }
 
     .expertise-card:hover {
-      background: var(--green-light);
-    }
-
-    .card-number {
-      color: var(--gold);
-
-      font-size: 11px;
-      letter-spacing: 0.15em;
+      transform: translateY(-4px);
     }
 
     .card-title {
-      margin-top: 80px;
+      margin-top: 0;
 
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 400;
 
       letter-spacing: -0.025em;
+
+      transition: color 0.25s ease;
+    }
+
+    .expertise-card:hover .card-title {
+      color: var(--gold);
     }
 
     .card-description {
-      margin-top: 18px;
+      max-width: 340px;
+
+      margin-top: 22px;
 
       color: var(--cream-muted);
 
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
 
@@ -537,28 +552,39 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
       grid-template-columns:
         repeat(3, 1fr);
 
-      gap: 1px;
+      gap: 70px;
+
+      border-top: 1px solid var(--border);
+
+      padding-top: 55px;
+    }
+
+    .approach-card {
+      background: transparent;
+
+      padding: 0 20px 0 0;
+
+      min-height: 300px;
+
+      position: relative;
+    }
+
+    .approach-card:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      right: -35px;
+
+      width: 1px;
+      height: 100%;
 
       background: var(--border);
     }
 
-    .approach-card {
-      background: var(--green-light);
-
-      padding: 45px 38px 50px;
-
-      min-height: 380px;
-    }
-
-    .approach-card-number {
-      color: var(--gold);
-
-      font-size: 11px;
-      letter-spacing: 0.15em;
-    }
-
     .approach-card h3 {
-      margin-top: 85px;
+      margin-top: 0;
 
       font-size: 28px;
       font-weight: 400;
@@ -571,12 +597,12 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
     .approach-card p {
       max-width: 400px;
 
-      margin-top: 20px;
+      margin-top: 22px;
 
       color: var(--cream-muted);
 
       font-size: 14px;
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
 
@@ -840,13 +866,45 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
         grid-template-columns: 1fr;
       }
 
+      .expertise-grid,
+      .approach-grid {
+        gap: 0;
+
+        padding-top: 0;
+
+        border-top: none;
+      }
+
       .expertise-card {
-        border-left: 1px solid var(--border);
+        min-height: auto;
+
+        padding: 35px 0;
+
         border-bottom: 1px solid var(--border);
       }
 
-      .expertise-card:last-child {
-        border-bottom: none;
+      .expertise-card:first-child {
+        border-top: 1px solid var(--border);
+      }
+
+      .expertise-card:not(:last-child)::after {
+        display: none;
+      }
+
+      .approach-card {
+        min-height: auto;
+
+        padding: 35px 0;
+
+        border-bottom: 1px solid var(--border);
+      }
+
+      .approach-card:first-child {
+        border-top: 1px solid var(--border);
+      }
+
+      .approach-card:not(:last-child)::after {
+        display: none;
       }
 
       .team-card {
@@ -931,22 +989,12 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
         margin-top: 30px;
       }
 
-      .card-title {
-        margin-top: 55px;
-      }
-
       .approach-intro {
         margin-bottom: 60px;
       }
 
       .approach-card {
-        padding: 40px;
-
-        min-height: 330px;
-      }
-
-      .approach-card h3 {
-        margin-top: 60px;
+        padding: 35px 0;
       }
 
       .team-intro {
@@ -1001,9 +1049,9 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
         font-size: 43px;
       }
 
-      .approach-card,
-      .team-card {
-        padding: 30px;
+      .expertise-card,
+      .approach-card {
+        padding: 30px 0;
       }
 
       .contact h2 {
@@ -1027,35 +1075,36 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
 
   <header class="nav">
 
-<div class="nav-inner">
+    <div class="nav-inner">
 
-  <a href="#" class="logo">
-    FINEXUS <span>PARTNERS</span>
-  </a>
+      <a href="#" class="logo">
+        FINEXUS <span>PARTNERS</span>
+      </a>
 
-  <nav class="nav-links">
+      <nav class="nav-links">
 
-    <a href="#expertise">
-      Expertise
-    </a>
+        <a href="#expertise">
+          Expertise
+        </a>
 
-    <a href="#approach">
-      Approach
-    </a>
+        <a href="#approach">
+          Approach
+        </a>
 
-    <a href="#team">
-      Team
-    </a>
+        <a href="#team">
+          Team
+        </a>
 
-    <a href="#contact">
-      Contact
-    </a>
+        <a href="#contact">
+          Contact
+        </a>
 
-  </nav>
+      </nav>
 
-</div>
+    </div>
 
   </header>
+
 
   <!-- ======================================
        HERO
@@ -1063,498 +1112,469 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
 
   <main>
 
-<section class="hero">
+    <section class="hero">
 
-  <div class="container">
+      <div class="container">
 
-    <div class="hero-content">
+        <div class="hero-content">
 
-      <div class="eyebrow">
-        Specialist Search · London & Global
-      </div>
+          <div class="eyebrow">
+            Specialist Search · London & Global
+          </div>
 
-      <h1>
-        Where exceptional
-        <em>talent</em> meets the
-        next opportunity
-      </h1>
+          <h1>
+            Where exceptional
+            <em>talent</em> meets the
+            next opportunity
+          </h1>
 
-      <div class="hero-bottom">
+          <div class="hero-bottom">
 
-        <p class="hero-description">
-          Finexus Partners is a specialist search firm
-          focused on FX, payments and financial
-          technology
-          <br><br>
-          We connect ambitious firms with people who
-          understand the markets they move in
-        </p>
+            <p class="hero-description">
+              Finexus Partners is a specialist search firm
+              focused on FX, payments and financial
+              technology
+              <br><br>
+              We connect ambitious firms with people who
+              understand the markets they move in
+            </p>
 
-        <div class="hero-cta">
+            <div class="hero-cta">
 
-          <a
-            href="#contact"
-            class="button"
-          >
-            Start a conversation
+              <a
+                href="#contact"
+                class="button"
+              >
+                Start a conversation
 
-            <span class="button-arrow">
-              →
-            </span>
-          </a>
+                <span class="button-arrow">
+                  →
+                </span>
+              </a>
 
-        </div>
+            </div>
 
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ======================================
-     INTRO
-     ====================================== -->
-
-<section class="intro">
-
-  <div class="container">
-
-    <div class="intro-grid">
-
-      <div>
-        <div class="section-label">
-          Market Intelligence
-        </div>
-      </div>
-
-      <div>
-
-        <h2 class="intro-heading">
-          Built for the people
-          <span>shaping how money moves</span>
-        </h2>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ======================================
-     EXPERTISE
-     ====================================== -->
-
-<section
-  class="expertise"
-  id="expertise"
->
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <h2 class="section-title">
-        The right people for a
-        market that never stands still
-      </h2>
-
-      <p class="section-description">
-        Our team combines first-hand experience
-        across FX, payments and financial technology
-        with a focused approach to specialist search
-      </p>
-
-    </div>
-
-
-    <div class="expertise-grid">
-
-
-      <article class="expertise-card">
-
-        <div class="card-number">
-          01
-        </div>
-
-        <h3 class="card-title">
-          FX Markets
-        </h3>
-
-        <p class="card-description">
-          Corporate and institutional FX,
-          trading, sales, product and
-          market infrastructure
-        </p>
-
-      </article>
-
-
-      <article class="expertise-card">
-
-        <div class="card-number">
-          02
-        </div>
-
-        <h3 class="card-title">
-          Payments
-        </h3>
-
-        <p class="card-description">
-          Acquiring, issuing, embedded finance,
-          payment technology and the infrastructure
-          behind modern money movement
-        </p>
-
-      </article>
-
-
-      <article class="expertise-card">
-
-        <div class="card-number">
-          03
-        </div>
-
-        <h3 class="card-title">
-          Leadership & Growth
-        </h3>
-
-        <p class="card-description">
-          Commercial leaders, senior specialists
-          and operators ready to build the next
-          phase of ambitious businesses
-        </p>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ======================================
-     APPROACH
-     ====================================== -->
-
-<section
-  class="approach"
-  id="approach"
->
-
-  <div class="container">
-
-    <div class="approach-intro">
-
-      <div class="section-label">
-        Our Approach
-      </div>
-
-      <h2>
-        Recruitment advice
-        with the <span>long view</span>
-        in mind
-      </h2>
-
-      <p class="approach-lead">
-        The best outcomes come from thoughtful
-        conversations, honest advice and partnerships
-        built to last
-      </p>
-
-    </div>
-
-
-    <div class="approach-grid">
-
-
-      <article class="approach-card">
-
-        <div class="approach-card-number">
-          01
-        </div>
-
-        <h3>
-          Consultative by nature
-        </h3>
-
-        <p>
-          We start with the context behind the brief
-          Understanding your business, your team,
-          your ambitions and the market around you
-          allows us to make recommendations that are
-          considered, relevant and practical
-        </p>
-
-      </article>
-
-
-      <article class="approach-card">
-
-        <div class="approach-card-number">
-          02
-        </div>
-
-        <h3>
-          Best intentions, always
-        </h3>
-
-        <p>
-          Our advice is direct, discreet and grounded
-          in what we believe is right for both sides
-          We take the time to understand motivations,
-          expectations and long-term objectives so that
-          every conversation has genuine purpose
-        </p>
-
-      </article>
-
-
-      <article class="approach-card">
-
-        <div class="approach-card-number">
-          03
-        </div>
-
-        <h3>
-          Relationships that endure
-        </h3>
-
-        <p>
-          The strongest partnerships are built over time
-          We are here for the mandate that matters today,
-          the career move that comes next and the market
-          conversation that may lead somewhere further
-          down the line
-        </p>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ======================================
-     TEAM
-     ====================================== -->
-
-<section
-  class="team"
-  id="team"
->
-
-  <div class="container">
-
-    <div class="team-intro">
-
-      <div>
-        <div class="section-label">
-          The Finexus Team
-        </div>
-      </div>
-
-      <div>
-
-        <h2 class="team-heading">
-          Specialist knowledge
-          <span>Market perspective</span>
-        </h2>
-
-        <p class="team-description">
-          Our team combines first-hand experience
-          of FX and payments with a focused approach
-          to specialist search
-          <br><br>
-          We understand the markets we recruit within,
-          the people who shape them and the businesses
-          looking to build what comes next
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="team-grid">
-
-
-      <article class="team-card">
-
-        <div class="team-card-name">
-          Emma Salmon
-        </div>
-
-        <div class="team-card-role">
-          Senior Leadership · FX & Payments
-        </div>
-
-        <p class="team-card-bio">
-          Emma brings extensive experience across
-          FX and payments to senior appointments
-          at every level
-          <br><br>
-          Her focus is on leadership and C-level
-          mandates, partnering with businesses to
-          identify the individuals capable of shaping
-          their next stage of growth
-        </p>
-
-        <div class="team-card-contact">
-
-          <a href="mailto:emma@finexuspartners.com">
-            emma@finexuspartners.com
-          </a>
-
-          <div class="team-card-phone">
-            07730 618536
           </div>
 
         </div>
 
-      </article>
+      </div>
+
+    </section>
 
 
-      <article class="team-card">
+    <!-- ======================================
+         INTRO
+         ====================================== -->
 
-        <div class="team-card-name">
-          Will Palmer
-        </div>
+    <section class="intro">
 
-        <div class="team-card-role">
-          Front Office · B2B & FX Sales
-        </div>
+      <div class="container">
 
-        <p class="team-card-bio">
-          Will began his career in FX and payments
-          sales, giving him first-hand experience
-          of the market he now recruits within
-          <br><br>
-          He specialises in front-office appointments
-          across the global FX and payments industry,
-          covering sales, dealing, trading and
-          commercial leadership
-        </p>
+        <div class="intro-grid">
 
-        <div class="team-card-contact">
+          <div>
+            <div class="section-label">
+              Market Intelligence
+            </div>
+          </div>
 
-          <a href="mailto:will@finexuspartners.com">
-            will@finexuspartners.com
-          </a>
+          <div>
 
-          <div class="team-card-phone">
-            07810 308392
+            <h2 class="intro-heading">
+              Built for the people
+              <span>shaping how money moves</span>
+            </h2>
+
           </div>
 
         </div>
 
-      </article>
+      </div>
+
+    </section>
 
 
-      <article class="team-card">
+    <!-- ======================================
+         EXPERTISE
+         ====================================== -->
 
-        <div class="team-card-name">
-          Tom Fisher
+    <section
+      class="expertise"
+      id="expertise"
+    >
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <h2 class="section-title">
+            The right people for a
+            market that never stands still
+          </h2>
+
+          <p class="section-description">
+            Our team combines first-hand experience
+            across FX, payments and financial technology
+            with a focused approach to specialist search
+          </p>
+
         </div>
 
-        <div class="team-card-role">
-          Middle & Back Office
+
+        <div class="expertise-grid">
+
+          <article class="expertise-card">
+
+            <h3 class="card-title">
+              FX Markets
+            </h3>
+
+            <p class="card-description">
+              Corporate and institutional FX,
+              trading, sales, product and
+              market infrastructure
+            </p>
+
+          </article>
+
+
+          <article class="expertise-card">
+
+            <h3 class="card-title">
+              Payments
+            </h3>
+
+            <p class="card-description">
+              Acquiring, issuing, embedded finance,
+              payment technology and the infrastructure
+              behind modern money movement
+            </p>
+
+          </article>
+
+
+          <article class="expertise-card">
+
+            <h3 class="card-title">
+              Leadership & Growth
+            </h3>
+
+            <p class="card-description">
+              Commercial leaders, senior specialists
+              and operators ready to build the next
+              phase of ambitious businesses
+            </p>
+
+          </article>
+
         </div>
 
-        <p class="team-card-bio">
-          Tom specialises in sales and middle-office
-          appointments across the global FX and
-          payments industry
-          <br><br>
-          With experience delivering appointments
-          from emerging talent through to senior
-          leadership, he brings a detailed understanding
-          of the people and capabilities that keep
-          businesses moving
-        </p>
+      </div>
 
-        <div class="team-card-contact">
+    </section>
 
-          <a href="mailto:tom@finexuspartners.com">
-            tom@finexuspartners.com
-          </a>
 
-          <div class="team-card-phone">
-            07364 237677
+    <!-- ======================================
+         APPROACH
+         ====================================== -->
+
+    <section
+      class="approach"
+      id="approach"
+    >
+
+      <div class="container">
+
+        <div class="approach-intro">
+
+          <div class="section-label">
+            Our Approach
+          </div>
+
+          <h2>
+            Recruitment advice
+            with the <span>long view</span>
+            in mind
+          </h2>
+
+          <p class="approach-lead">
+            The best outcomes come from thoughtful
+            conversations, honest advice and partnerships
+            built to last
+          </p>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+          <article class="approach-card">
+
+            <h3>
+              Consultative by nature
+            </h3>
+
+            <p>
+              We start with the context behind the brief.
+              Understanding your business, your team,
+              your ambitions and the market around you
+              allows us to make recommendations that are
+              considered, relevant and practical.
+            </p>
+
+          </article>
+
+
+          <article class="approach-card">
+
+            <h3>
+              Best intentions, always
+            </h3>
+
+            <p>
+              Our advice is direct, discreet and grounded
+              in what we believe is right for both sides.
+              We take the time to understand motivations,
+              expectations and long-term objectives so that
+              every conversation has genuine purpose.
+            </p>
+
+          </article>
+
+
+          <article class="approach-card">
+
+            <h3>
+              Relationships that endure
+            </h3>
+
+            <p>
+              The strongest partnerships are built over time.
+              We are here for the mandate that matters today,
+              the career move that comes next and the market
+              conversation that may lead somewhere further
+              down the line.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         TEAM
+         ====================================== -->
+
+    <section
+      class="team"
+      id="team"
+    >
+
+      <div class="container">
+
+        <div class="team-intro">
+
+          <div>
+            <div class="section-label">
+              The Finexus Team
+            </div>
+          </div>
+
+          <div>
+
+            <h2 class="team-heading">
+              Specialist knowledge
+              <span>Market perspective</span>
+            </h2>
+
+            <p class="team-description">
+              Our team combines first-hand experience
+              of FX and payments with a focused approach
+              to specialist search
+              <br><br>
+              We understand the markets we recruit within,
+              the people who shape them and the businesses
+              looking to build what comes next
+            </p>
+
           </div>
 
         </div>
 
-      </article>
+
+        <div class="team-grid">
+
+          <article class="team-card">
+
+            <div class="team-card-name">
+              Emma Salmon
+            </div>
+
+            <div class="team-card-role">
+              Senior Leadership · FX & Payments
+            </div>
+
+            <p class="team-card-bio">
+              Emma brings extensive experience across
+              FX and payments to senior appointments
+              at every level
+              <br><br>
+              Her focus is on leadership and C-level
+              mandates, partnering with businesses to
+              identify the individuals capable of shaping
+              their next stage of growth
+            </p>
+
+            <div class="team-card-contact">
+
+              <a href="mailto:emma@finexuspartners.com">
+                emma@finexuspartners.com
+              </a>
+
+              <div class="team-card-phone">
+                07730 618536
+              </div>
+
+            </div>
+
+          </article>
 
 
-    </div>
+          <article class="team-card">
 
-  </div>
+            <div class="team-card-name">
+              Will Palmer
+            </div>
 
-</section>
+            <div class="team-card-role">
+              Front Office · B2B & FX Sales
+            </div>
+
+            <p class="team-card-bio">
+              Will began his career in FX and payments
+              sales, giving him first-hand experience
+              of the market he now recruits within
+              <br><br>
+              He specialises in front-office appointments
+              across the global FX and payments industry,
+              covering sales, dealing, trading and
+              commercial leadership
+            </p>
+
+            <div class="team-card-contact">
+
+              <a href="mailto:will@finexuspartners.com">
+                will@finexuspartners.com
+              </a>
+
+              <div class="team-card-phone">
+                07810 308392
+              </div>
+
+            </div>
+
+          </article>
 
 
-<!-- ======================================
-     CONTACT
-     ====================================== -->
+          <article class="team-card">
 
-<section
-  class="contact"
-  id="contact"
->
+            <div class="team-card-name">
+              Tom Fisher
+            </div>
 
-  <div class="container">
+            <div class="team-card-role">
+              Middle & Back Office
+            </div>
 
-    <div class="contact-content">
+            <p class="team-card-bio">
+              Tom specialises in sales and middle-office
+              appointments across the global FX and
+              payments industry
+              <br><br>
+              With experience delivering appointments
+              from emerging talent through to senior
+              leadership, he brings a detailed understanding
+              of the people and capabilities that keep
+              businesses moving
+            </p>
 
-      <div class="section-label">
-        Let's Talk
+            <div class="team-card-contact">
+
+              <a href="mailto:tom@finexuspartners.com">
+                tom@finexuspartners.com
+              </a>
+
+              <div class="team-card-phone">
+                07364 237677
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
 
-      <h2>
-        A mandate, a move,
-        or a <span>market conversation</span>
-      </h2>
+    </section>
 
-      <p class="contact-description">
-        Speak with Finexus Partners about the people
-        and opportunities shaping the future of FX,
-        payments and financial technology
-      </p>
 
-      <div class="contact-button">
+    <!-- ======================================
+         CONTACT
+         ====================================== -->
 
-        <a
-          href="mailto:hello@finexuspartners.com"
-          class="button"
-        >
-          Get in touch
+    <section
+      class="contact"
+      id="contact"
+    >
 
-          <span class="button-arrow">
-            →
-          </span>
-        </a>
+      <div class="container">
+
+        <div class="contact-content">
+
+          <div class="section-label">
+            Let's Talk
+          </div>
+
+          <h2>
+            A mandate, a move,
+            or a <span>market conversation</span>
+          </h2>
+
+          <p class="contact-description">
+            Speak with Finexus Partners about the people
+            and opportunities shaping the future of FX,
+            payments and financial technology
+          </p>
+
+          <div class="contact-button">
+
+            <a
+              href="mailto:hello@finexuspartners.com"
+              class="button"
+            >
+              Get in touch
+
+              <span class="button-arrow">
+                →
+              </span>
+            </a>
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
   </main>
+
 
   <!-- ======================================
        FOOTER
@@ -1562,21 +1582,21 @@ content="Finexus Partners is a specialist search firm focused on FX, payments an
 
   <footer>
 
-<div class="container">
+    <div class="container">
 
-  <div class="footer-inner">
+      <div class="footer-inner">
 
-    <div class="footer-copy">
-      © 2026 Finexus Partners
+        <div class="footer-copy">
+          © 2026 Finexus Partners
+        </div>
+
+        <div class="footer-specialisms">
+          FX · Payments · Technology
+        </div>
+
+      </div>
+
     </div>
-
-    <div class="footer-specialisms">
-      FX · Payments · Technology
-    </div>
-
-  </div>
-
-</div>
 
   </footer>
 
