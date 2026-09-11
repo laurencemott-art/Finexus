@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,10 +10,10 @@
 
   <meta
     name="description"
-    content="Finexus Partners is a specialist search firm focused on FX, payments and financial technology"
+    content="Finexus Partners is a specialist search firm focused on FX, payments, leadership and growth"
   >
 
-  <title>Finexus Partners — FX · Payments · Technology</title>
+  <title>Finexus Partners — FX · Payments · Leadership</title>
 
   <style>
 
@@ -66,6 +65,12 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
     }
 
 
@@ -133,7 +138,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 36px;
+      gap: 32px;
 
       font-size: 12px;
       letter-spacing: 0.12em;
@@ -272,7 +277,7 @@
     }
 
     .hero-description {
-      max-width: 540px;
+      max-width: 570px;
 
       color: var(--cream-muted);
 
@@ -330,62 +335,14 @@
 
 
     /* =========================================
-       INTRO
-       ========================================= */
-
-    .intro {
-      padding: 150px 0;
-
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .intro-grid {
-      display: grid;
-
-      grid-template-columns:
-        minmax(180px, 0.65fr)
-        minmax(300px, 1.35fr);
-
-      gap: 80px;
-    }
-
-    .section-label {
-      color: var(--gold);
-
-      font-size: 10px;
-      font-weight: 600;
-
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .intro-heading {
-      max-width: 800px;
-
-      font-size: clamp(
-        40px,
-        5vw,
-        72px
-      );
-
-      font-weight: 400;
-      line-height: 1.04;
-
-      letter-spacing: -0.045em;
-    }
-
-    .intro-heading span {
-      color: var(--gold);
-    }
-
-
-    /* =========================================
-       EXPERTISE
+       EXPERTISE — HIGHER UP THE PAGE
        ========================================= */
 
     .expertise {
       padding: 150px 0;
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .section-header {
@@ -421,11 +378,6 @@
       font-size: 15px;
       line-height: 1.75;
     }
-
-    /*
-       Expertise is intentionally open and borderless.
-       No boxes, cards or numbered labels.
-    */
 
     .expertise-grid {
       display: grid;
@@ -494,6 +446,56 @@
 
       font-size: 14px;
       line-height: 1.8;
+    }
+
+
+    /* =========================================
+       INTRO / MARKET POSITIONING
+       ========================================= */
+
+    .intro {
+      padding: 150px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .intro-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(180px, 0.65fr)
+        minmax(300px, 1.35fr);
+
+      gap: 80px;
+    }
+
+    .section-label {
+      color: var(--gold);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .intro-heading {
+      max-width: 800px;
+
+      font-size: clamp(
+        40px,
+        5vw,
+        72px
+      );
+
+      font-weight: 400;
+      line-height: 1.04;
+
+      letter-spacing: -0.045em;
+    }
+
+    .intro-heading span {
+      color: var(--gold);
     }
 
 
@@ -602,6 +604,107 @@
       color: var(--cream-muted);
 
       font-size: 14px;
+      line-height: 1.8;
+    }
+
+
+    /* =========================================
+       CANDIDATE JOURNEY / TIMELINE
+       ========================================= */
+
+    .timeline {
+      padding: 150px 0;
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-header {
+      max-width: 900px;
+      margin-bottom: 90px;
+    }
+
+    .timeline-header h2 {
+      max-width: 850px;
+
+      margin-top: 22px;
+
+      font-size: clamp(
+        42px,
+        5.5vw,
+        76px
+      );
+
+      font-weight: 400;
+      line-height: 1;
+
+      letter-spacing: -0.05em;
+    }
+
+    .timeline-header h2 span {
+      color: var(--gold);
+    }
+
+    .timeline-header p {
+      max-width: 650px;
+
+      margin-top: 35px;
+
+      color: var(--cream-muted);
+
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .timeline-list {
+      position: relative;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .timeline-item {
+      display: grid;
+
+      grid-template-columns: 120px 1fr;
+
+      gap: 55px;
+
+      padding: 55px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-number {
+      color: var(--gold);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .timeline-content {
+      max-width: 780px;
+    }
+
+    .timeline-content h3 {
+      font-size: clamp(28px, 3vw, 42px);
+
+      font-weight: 400;
+      line-height: 1.08;
+
+      letter-spacing: -0.03em;
+    }
+
+    .timeline-content p {
+      max-width: 700px;
+
+      margin-top: 18px;
+
+      color: var(--cream-muted);
+
+      font-size: 15px;
       line-height: 1.8;
     }
 
@@ -739,6 +842,188 @@
       color: var(--cream-muted);
 
       font-size: 12px;
+    }
+
+
+    /* =========================================
+       CANDIDATE FORM
+       ========================================= */
+
+    .candidate {
+      padding: 150px 0;
+
+      background: var(--green-light);
+
+      border-top: 1px solid var(--border);
+    }
+
+    .candidate-header {
+      max-width: 850px;
+
+      margin-bottom: 70px;
+    }
+
+    .candidate-header h2 {
+      max-width: 850px;
+
+      margin-top: 22px;
+
+      font-size: clamp(
+        45px,
+        6vw,
+        88px
+      );
+
+      font-weight: 400;
+      line-height: 0.98;
+
+      letter-spacing: -0.05em;
+    }
+
+    .candidate-header h2 span {
+      color: var(--gold);
+    }
+
+    .candidate-header p {
+      max-width: 650px;
+
+      margin-top: 30px;
+
+      color: var(--cream-muted);
+
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .candidate-form {
+      max-width: 900px;
+
+      padding-top: 55px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .form-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 28px 35px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      margin-bottom: 10px;
+
+      color: var(--gold);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+
+      padding: 17px 0;
+
+      background: transparent;
+
+      border: none;
+      border-bottom: 1px solid var(--border);
+
+      color: var(--cream);
+
+      outline: none;
+
+      border-radius: 0;
+
+      font-size: 15px;
+
+      transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(247, 242, 232, 0.35);
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-bottom-color: var(--gold);
+    }
+
+    .form-field textarea {
+      min-height: 150px;
+
+      resize: vertical;
+    }
+
+    .file-field {
+      margin-top: 5px;
+    }
+
+    .file-input {
+      padding: 20px !important;
+
+      border: 1px dashed rgba(199, 164, 92, 0.55) !important;
+
+      background: rgba(0, 42, 30, 0.35) !important;
+
+      cursor: pointer;
+    }
+
+    .file-input:hover {
+      border-color: var(--gold) !important;
+    }
+
+    .file-help {
+      margin-top: 9px;
+
+      color: rgba(247, 242, 232, 0.48);
+
+      font-size: 11px;
+
+      line-height: 1.6;
+    }
+
+    .form-footer {
+      margin-top: 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .form-note {
+      max-width: 500px;
+
+      color: rgba(247, 242, 232, 0.48);
+
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .form-submit {
+      cursor: pointer;
+
+      background: transparent;
     }
 
 
@@ -917,6 +1202,20 @@
 
         gap: 35px;
       }
+
+      .timeline-item {
+        grid-template-columns: 80px 1fr;
+
+        gap: 30px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
     }
 
 
@@ -975,7 +1274,9 @@
       .intro,
       .expertise,
       .approach,
-      .team {
+      .timeline,
+      .team,
+      .candidate {
         padding: 100px 0;
       }
 
@@ -989,7 +1290,9 @@
         margin-top: 30px;
       }
 
-      .approach-intro {
+      .approach-intro,
+      .timeline-header,
+      .candidate-header {
         margin-bottom: 60px;
       }
 
@@ -1012,6 +1315,14 @@
       .footer-specialisms {
         margin-top: 15px;
       }
+
+      .form-footer {
+        display: block;
+      }
+
+      .form-submit {
+        margin-top: 25px;
+      }
     }
 
 
@@ -1021,7 +1332,8 @@
         --side-padding: 22px;
       }
 
-      .nav-links a:nth-child(2) {
+      .nav-links a:nth-child(2),
+      .nav-links a:nth-child(3) {
         display: none;
       }
 
@@ -1041,7 +1353,8 @@
         font-size: 42px;
       }
 
-      .approach-intro h2 {
+      .approach-intro h2,
+      .timeline-header h2 {
         font-size: 48px;
       }
 
@@ -1049,9 +1362,25 @@
         font-size: 43px;
       }
 
+      .candidate-header h2 {
+        font-size: 52px;
+      }
+
       .expertise-card,
       .approach-card {
         padding: 30px 0;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 40px 0;
+      }
+
+      .timeline-number {
+        font-size: 10px;
       }
 
       .contact h2 {
@@ -1068,6 +1397,7 @@
 </head>
 
 <body>
+
 
   <!-- ======================================
        NAVIGATION
@@ -1093,6 +1423,10 @@
 
         <a href="#team">
           Team
+        </a>
+
+        <a href="#candidates">
+          Candidates
         </a>
 
         <a href="#contact">
@@ -1131,60 +1465,33 @@
           <div class="hero-bottom">
 
             <p class="hero-description">
+
               Finexus Partners is a specialist search firm
-              focused on FX, payments and financial
-              technology
+              focused on FX markets, payments, leadership
+              and growth.
+
               <br><br>
+
               We connect ambitious firms with people who
-              understand the markets they move in
+              understand the markets they move in.
+
             </p>
 
             <div class="hero-cta">
 
               <a
-                href="#contact"
+                href="#expertise"
                 class="button"
               >
-                Start a conversation
+                Explore our expertise
 
                 <span class="button-arrow">
                   →
                 </span>
+
               </a>
 
             </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ======================================
-         INTRO
-         ====================================== -->
-
-    <section class="intro">
-
-      <div class="container">
-
-        <div class="intro-grid">
-
-          <div>
-            <div class="section-label">
-              Market Intelligence
-            </div>
-          </div>
-
-          <div>
-
-            <h2 class="intro-heading">
-              Built for the people
-              <span>shaping how money moves</span>
-            </h2>
 
           </div>
 
@@ -1209,14 +1516,16 @@
         <div class="section-header">
 
           <h2 class="section-title">
-            The right people for a
-            market that never stands still
+            FX Markets, Payments,
+            Leadership & Growth
           </h2>
 
           <p class="section-description">
-            Our team combines first-hand experience
-            across FX, payments and financial technology
-            with a focused approach to specialist search
+
+            Specialist recruitment across the markets,
+            functions and leadership teams that drive
+            modern financial businesses.
+
           </p>
 
         </div>
@@ -1231,9 +1540,11 @@
             </h3>
 
             <p class="card-description">
+
               Corporate and institutional FX,
               trading, sales, product and
-              market infrastructure
+              market infrastructure.
+
             </p>
 
           </article>
@@ -1246,9 +1557,11 @@
             </h3>
 
             <p class="card-description">
+
               Acquiring, issuing, embedded finance,
               payment technology and the infrastructure
-              behind modern money movement
+              behind modern money movement.
+
             </p>
 
           </article>
@@ -1261,12 +1574,50 @@
             </h3>
 
             <p class="card-description">
+
               Commercial leaders, senior specialists
               and operators ready to build the next
-              phase of ambitious businesses
+              phase of ambitious businesses.
+
             </p>
 
           </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         INTRO
+         ====================================== -->
+
+    <section class="intro">
+
+      <div class="container">
+
+        <div class="intro-grid">
+
+          <div>
+
+            <div class="section-label">
+              Market Intelligence
+            </div>
+
+          </div>
+
+          <div>
+
+            <h2 class="intro-heading">
+
+              Built for the people
+              <span>shaping how money moves</span>
+
+            </h2>
+
+          </div>
 
         </div>
 
@@ -1293,15 +1644,19 @@
           </div>
 
           <h2>
+
             Recruitment advice
             with the <span>long view</span>
             in mind
+
           </h2>
 
           <p class="approach-lead">
-            The best outcomes come from thoughtful
-            conversations, honest advice and partnerships
-            built to last
+
+            We partner with businesses to understand
+            what they are trying to achieve, then build
+            a targeted search around those goals.
+
           </p>
 
         </div>
@@ -1316,11 +1671,13 @@
             </h3>
 
             <p>
+
               We start with the context behind the brief.
               Understanding your business, your team,
               your ambitions and the market around you
               allows us to make recommendations that are
               considered, relevant and practical.
+
             </p>
 
           </article>
@@ -1333,11 +1690,13 @@
             </h3>
 
             <p>
+
               Our advice is direct, discreet and grounded
               in what we believe is right for both sides.
               We take the time to understand motivations,
               expectations and long-term objectives so that
               every conversation has genuine purpose.
+
             </p>
 
           </article>
@@ -1350,14 +1709,166 @@
             </h3>
 
             <p>
+
               The strongest partnerships are built over time.
               We are here for the mandate that matters today,
               the career move that comes next and the market
               conversation that may lead somewhere further
               down the line.
+
             </p>
 
           </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         TIMELINE
+         ====================================== -->
+
+    <section class="timeline">
+
+      <div class="container">
+
+        <div class="timeline-header">
+
+          <div class="section-label">
+            How It Works
+          </div>
+
+          <h2>
+
+            A focused process
+            from brief to <span>appointment</span>
+
+          </h2>
+
+          <p>
+
+            We work closely with businesses throughout
+            the process — from understanding the business
+            and its objectives, through targeted headhunting,
+            interviews and negotiations, to securing the
+            right candidate.
+
+          </p>
+
+        </div>
+
+
+        <div class="timeline-list">
+
+
+          <article class="timeline-item">
+
+            <div class="timeline-number">
+              01 · Partner
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Partner with and consult with businesses
+              </h3>
+
+              <p>
+
+                We work as a trusted partner rather than
+                simply taking a recruitment brief. We build
+                an understanding of the business, its market,
+                its people and where it wants to go.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <div class="timeline-number">
+              02 · Understand
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Learn the business, understand the needs and objectives
+              </h3>
+
+              <p>
+
+                We take the time to understand what you want
+                to achieve, the challenges you are facing and
+                the type of individual who will make a genuine
+                difference to the business.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <div class="timeline-number">
+              03 · Search
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Targeted headhunting to meet your needs and goals
+              </h3>
+
+              <p>
+
+                We identify and approach relevant individuals
+                across our specialist markets, using our
+                knowledge of FX, payments and financial
+                technology to create a focused and targeted
+                search.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <div class="timeline-number">
+              04 · Secure
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Manage interviews, negotiations and secure the right candidate
+              </h3>
+
+              <p>
+
+                We manage the process from initial
+                conversations through interviews, feedback,
+                negotiations and offer management — keeping
+                both sides aligned until the right appointment
+                is secured.
+
+              </p>
+
+            </div>
+
+          </article>
+
 
         </div>
 
@@ -1380,26 +1891,34 @@
         <div class="team-intro">
 
           <div>
+
             <div class="section-label">
               The Finexus Team
             </div>
+
           </div>
 
           <div>
 
             <h2 class="team-heading">
+
               Specialist knowledge
               <span>Market perspective</span>
+
             </h2>
 
             <p class="team-description">
+
               Our team combines first-hand experience
               of FX and payments with a focused approach
-              to specialist search
+              to specialist search.
+
               <br><br>
+
               We understand the markets we recruit within,
               the people who shape them and the businesses
-              looking to build what comes next
+              looking to build what comes next.
+
             </p>
 
           </div>
@@ -1408,6 +1927,7 @@
 
 
         <div class="team-grid">
+
 
           <article class="team-card">
 
@@ -1420,14 +1940,18 @@
             </div>
 
             <p class="team-card-bio">
+
               Emma brings extensive experience across
               FX and payments to senior appointments
-              at every level
+              at every level.
+
               <br><br>
+
               Her focus is on leadership and C-level
               mandates, partnering with businesses to
               identify the individuals capable of shaping
-              their next stage of growth
+              their next stage of growth.
+
             </p>
 
             <div class="team-card-contact">
@@ -1456,14 +1980,18 @@
             </div>
 
             <p class="team-card-bio">
+
               Will began his career in FX and payments
-              sales, giving him first-hand experience
-              of the market he now recruits within
+              sales, giving him first-hand experience of
+              the market he now recruits within.
+
               <br><br>
+
               He specialises in front-office appointments
               across the global FX and payments industry,
               covering sales, dealing, trading and
-              commercial leadership
+              commercial leadership.
+
             </p>
 
             <div class="team-card-contact">
@@ -1492,15 +2020,19 @@
             </div>
 
             <p class="team-card-bio">
+
               Tom specialises in sales and middle-office
               appointments across the global FX and
-              payments industry
+              payments industry.
+
               <br><br>
+
               With experience delivering appointments
               from emerging talent through to senior
               leadership, he brings a detailed understanding
               of the people and capabilities that keep
-              businesses moving
+              businesses moving.
+
             </p>
 
             <div class="team-card-contact">
@@ -1517,7 +2049,248 @@
 
           </article>
 
+
         </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         CANDIDATE CV FORM
+         ====================================== -->
+
+    <section
+      class="candidate"
+      id="candidates"
+    >
+
+      <div class="container">
+
+        <div class="candidate-header">
+
+          <div class="section-label">
+            Looking For Your Next Opportunity?
+          </div>
+
+          <h2>
+
+            Put your CV in front of
+            <span>Finexus Partners</span>
+
+          </h2>
+
+          <p>
+
+            If you're considering your next move within
+            FX, payments, financial technology, leadership
+            or commercial growth, send us your details and
+            CV. We'll keep your profile in mind for relevant
+            opportunities.
+
+          </p>
+
+        </div>
+
+
+        <!--
+          FORM SUBMISSION
+
+          FormSubmit handles the email delivery because
+          this website is static HTML hosted on GitHub.
+
+          First submission requires activation of the
+          form via an email sent to:
+          laurencemott@aol.co.uk
+
+          CV upload limit:
+          10MB total submission size.
+        -->
+
+        <form
+          class="candidate-form"
+          action="https://formsubmit.co/laurencemott@aol.co.uk"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+
+          <!-- Email subject -->
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Candidate CV — Finexus Partners"
+          >
+
+          <!-- Reply directly to candidate -->
+          <input
+            type="hidden"
+            name="_replyto"
+            value=""
+          >
+
+          <!-- Email template -->
+          <input
+            type="hidden"
+            name="_template"
+            value="table"
+          >
+
+          <!-- Honeypot spam protection -->
+          <input
+            type="text"
+            name="_honey"
+            style="display:none"
+            tabindex="-1"
+            autocomplete="off"
+          >
+
+          <!-- Keep FormSubmit CAPTCHA enabled for spam protection -->
+          <input
+            type="hidden"
+            name="_captcha"
+            value="true"
+          >
+
+
+          <div class="form-grid">
+
+
+            <!-- NAME -->
+
+            <div class="form-field">
+
+              <label for="candidate-name">
+                Full Name *
+              </label>
+
+              <input
+                type="text"
+                id="candidate-name"
+                name="name"
+                placeholder="Your full name"
+                autocomplete="name"
+                required
+              >
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-field">
+
+              <label for="candidate-phone">
+                Phone Number *
+              </label>
+
+              <input
+                type="tel"
+                id="candidate-phone"
+                name="phone"
+                placeholder="Your phone number"
+                autocomplete="tel"
+                required
+              >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-field full">
+
+              <label for="candidate-email">
+                Email Address *
+              </label>
+
+              <input
+                type="email"
+                id="candidate-email"
+                name="email"
+                placeholder="Your email address"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-field full">
+
+              <label for="candidate-message">
+                Notes / Message
+              </label>
+
+              <textarea
+                id="candidate-message"
+                name="message"
+                placeholder="Tell us a little about yourself, your experience and what you're looking for next."
+              ></textarea>
+
+            </div>
+
+
+            <!-- CV -->
+
+            <div class="form-field full file-field">
+
+              <label for="candidate-cv">
+                CV — PDF Only *
+              </label>
+
+              <input
+                class="file-input"
+                type="file"
+                id="candidate-cv"
+                name="attachment"
+                accept="application/pdf,.pdf"
+                required
+              >
+
+              <div class="file-help">
+
+                Please upload your CV as a PDF.
+                Maximum file size is 10MB.
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="form-footer">
+
+            <p class="form-note">
+
+              By submitting your details and CV, you are
+              providing your information to Finexus Partners
+              for consideration for relevant career
+              opportunities.
+
+            </p>
+
+
+            <button
+              type="submit"
+              class="button form-submit"
+            >
+
+              Submit CV
+
+              <span class="button-arrow">
+                →
+              </span>
+
+            </button>
+
+          </div>
+
+        </form>
 
       </div>
 
@@ -1542,14 +2315,18 @@
           </div>
 
           <h2>
+
             A mandate, a move,
             or a <span>market conversation</span>
+
           </h2>
 
           <p class="contact-description">
+
             Speak with Finexus Partners about the people
             and opportunities shaping the future of FX,
-            payments and financial technology
+            payments and financial technology.
+
           </p>
 
           <div class="contact-button">
@@ -1558,11 +2335,13 @@
               href="mailto:hello@finexuspartners.com"
               class="button"
             >
+
               Get in touch
 
               <span class="button-arrow">
                 →
               </span>
+
             </a>
 
           </div>
@@ -1591,7 +2370,7 @@
         </div>
 
         <div class="footer-specialisms">
-          FX · Payments · Technology
+          FX · Payments · Leadership · Growth
         </div>
 
       </div>
@@ -1599,6 +2378,105 @@
     </div>
 
   </footer>
+
+
+  <!-- ======================================
+       CV FORM VALIDATION
+       ====================================== -->
+
+  <script>
+
+    const candidateForm =
+      document.querySelector(".candidate-form");
+
+    const cvInput =
+      document.getElementById("candidate-cv");
+
+
+    cvInput.addEventListener("change", function () {
+
+      const file = this.files[0];
+
+      if (!file) {
+        return;
+      }
+
+      const isPDF =
+        file.type === "application/pdf" ||
+        file.name.toLowerCase().endsWith(".pdf");
+
+      const maxSize =
+        10 * 1024 * 1024;
+
+
+      if (!isPDF) {
+
+        alert("Please upload your CV as a PDF.");
+
+        this.value = "";
+
+        return;
+      }
+
+
+      if (file.size > maxSize) {
+
+        alert("Your CV must be smaller than 10MB.");
+
+        this.value = "";
+
+        return;
+      }
+
+    });
+
+
+    candidateForm.addEventListener("submit", function (event) {
+
+      const file = cvInput.files[0];
+
+      if (!file) {
+
+        event.preventDefault();
+
+        alert("Please upload your CV as a PDF.");
+
+        return;
+      }
+
+
+      const isPDF =
+        file.type === "application/pdf" ||
+        file.name.toLowerCase().endsWith(".pdf");
+
+
+      const maxSize =
+        10 * 1024 * 1024;
+
+
+      if (!isPDF) {
+
+        event.preventDefault();
+
+        alert("Please upload your CV as a PDF.");
+
+        return;
+      }
+
+
+      if (file.size > maxSize) {
+
+        event.preventDefault();
+
+        alert("Your CV must be smaller than 10MB.");
+
+        return;
+      }
+
+    });
+
+  </script>
+
 
 </body>
 </html>
