@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Finexus Partners is a specialist search firm focused on FX, payments and financial technology"
+  >
 
   <title>Finexus Partners — FX · Payments · Technology</title>
 
   <style>
+
+    /* =========================================
+       FINEXUS — CORE SETTINGS
+       ========================================= */
+
     :root {
       --green: #002a1e;
       --green-light: #073b2c;
@@ -15,14 +30,20 @@
       --gold-light: #d8bd7e;
       --cream-muted: rgba(247, 242, 232, 0.68);
       --border: rgba(247, 242, 232, 0.16);
+
       --max-width: 1240px;
       --side-padding: clamp(24px, 5vw, 72px);
     }
 
+
+    /* =========================================
+       RESET
+       ========================================= */
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -32,9 +53,16 @@
     body {
       background: var(--green);
       color: var(--cream);
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Inter,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
       line-height: 1.5;
-      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -42,43 +70,73 @@
       text-decoration: none;
     }
 
-    /* =========================
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+
+    /* =========================================
+       LAYOUT
+       ========================================= */
+
+    .container {
+      width: min(
+        calc(100% - (var(--side-padding) * 2)),
+        var(--max-width)
+      );
+
+      margin: 0 auto;
+    }
+
+
+    /* =========================================
        NAVIGATION
-    ========================= */
+       ========================================= */
 
     .nav {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      z-index: 1000;
 
+      width: 100%;
+
+      z-index: 100;
+
+      /*
+        IMPORTANT:
+        No blur, no backdrop-filter and no
+        transparent gradient. The header stays
+        completely solid while scrolling.
+      */
       background: var(--green);
-      border-bottom: 1px solid var(--border);
 
-      /* No blur */
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
+
+      box-shadow: none;
     }
 
     .nav-inner {
-      width: 100%;
-      max-width: var(--max-width);
-      min-height: 86px;
+      width: min(
+        calc(100% - (var(--side-padding) * 2)),
+        var(--max-width)
+      );
+
       margin: 0 auto;
-      padding: 0 var(--side-padding);
+
+      min-height: 92px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px;
     }
 
     .logo {
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 700;
       letter-spacing: 0.18em;
-      white-space: nowrap;
     }
 
     .logo span {
@@ -88,73 +146,136 @@
     .nav-links {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      gap: 28px;
+      gap: 36px;
 
-      font-size: 10px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
     }
 
     .nav-links a {
-      transition: color 0.2s ease;
+      position: relative;
+
+      color: var(--cream-muted);
+
+      transition: color 0.25s ease;
     }
 
     .nav-links a:hover {
-      color: var(--gold-light);
+      color: var(--cream);
     }
 
-    /* =========================
-       GLOBAL
-    ========================= */
+    .nav-links a::after {
+      content: "";
 
-    .container {
+      position: absolute;
+
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--gold);
+
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
       width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding-left: var(--side-padding);
-      padding-right: var(--side-padding);
     }
 
-    .eyebrow {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
 
-    /* =========================
+    /* =========================================
        HERO
-    ========================= */
+       ========================================= */
 
     .hero {
       min-height: 100vh;
-      padding-top: 86px;
 
       display: flex;
       align-items: center;
+
+      padding-top: 130px;
+      padding-bottom: 100px;
+
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-inner {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 100px var(--side-padding);
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 650px;
+      height: 650px;
+
+      right: -250px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(199, 164, 92, 0.14);
+
+      box-shadow:
+        0 0 0 80px rgba(199, 164, 92, 0.025),
+        0 0 0 160px rgba(199, 164, 92, 0.018);
+
+      pointer-events: none;
     }
 
-    .hero-eyebrow {
-      margin-bottom: 34px;
-    }
-
-    .hero h1 {
+    .hero-content {
       max-width: 1050px;
 
-      font-size: 62px;
-      line-height: 0.98;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-bottom: 30px;
+
+      color: var(--gold);
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 30px;
+      height: 1px;
+
+      background: var(--gold);
+    }
+
+    /*
+      Slightly smaller than the previous version.
+    */
+
+    .hero h1 {
+      max-width: 1000px;
+
+      font-size: clamp(
+        54px,
+        7.6vw,
+        112px
+      );
+
       font-weight: 400;
-      letter-spacing: -0.045em;
+
+      line-height: 0.94;
+      letter-spacing: -0.055em;
     }
 
     .hero h1 em {
@@ -162,354 +283,947 @@
       font-style: normal;
     }
 
-    .hero-copy {
-      max-width: 620px;
-      margin-top: 40px;
+    .hero-bottom {
+      margin-top: 60px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 50px;
+    }
+
+    .hero-description {
+      max-width: 540px;
 
       color: var(--cream-muted);
-      font-size: 16px;
+
+      font-size: 17px;
       line-height: 1.75;
     }
 
-    .hero-button {
+    .hero-cta {
+      flex-shrink: 0;
+    }
+
+
+    /* =========================================
+       BUTTON
+       ========================================= */
+
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
-      margin-top: 42px;
-      padding: 16px 25px;
+      gap: 18px;
+
+      padding: 16px 22px;
 
       border: 1px solid var(--gold);
+
       color: var(--cream);
 
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.12em;
+
+      letter-spacing: 0.15em;
       text-transform: uppercase;
 
       transition:
-        background 0.2s ease,
-        color 0.2s ease;
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
     }
 
-    .hero-button:hover {
+    .button:hover {
       background: var(--gold);
       color: var(--green);
+
+      transform: translateY(-2px);
     }
 
-    /* =========================
+    .button-arrow {
+      color: var(--gold);
+
+      font-size: 18px;
+      line-height: 0;
+
+      transition: transform 0.25s ease;
+    }
+
+    .button:hover .button-arrow {
+      color: var(--green);
+
+      transform: translateX(4px);
+    }
+
+
+    /* =========================================
        INTRO
-    ========================= */
+       ========================================= */
 
     .intro {
-      padding-top: 150px;
-      padding-bottom: 150px;
+      padding: 150px 0;
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .intro-grid {
       display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
+
+      grid-template-columns:
+        minmax(180px, 0.65fr)
+        minmax(300px, 1.35fr);
+
       gap: 80px;
-      align-items: start;
+    }
+
+    .section-label {
+      color: var(--gold);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
 
     .intro-heading {
-      max-width: 850px;
+      max-width: 800px;
 
-      font-size: 53px;
-      line-height: 1;
+      font-size: clamp(
+        40px,
+        5vw,
+        72px
+      );
+
       font-weight: 400;
-      letter-spacing: -0.04em;
+
+      line-height: 1.04;
+
+      letter-spacing: -0.045em;
     }
 
-    /* =========================
+    .intro-heading span {
+      color: var(--gold);
+    }
+
+
+    /* =========================================
        EXPERTISE
-    ========================= */
+       ========================================= */
 
     .expertise {
-      padding-bottom: 150px;
+      padding: 150px 0;
     }
 
-    .expertise-heading {
-      margin-bottom: 55px;
-    }
+    /*
+      The previous large expertise title has
+      intentionally been removed.
+
+      The three specialist areas now sit directly
+      within the expertise section.
+    */
 
     .expertise-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 70px;
 
       border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+
+      padding-top: 55px;
     }
 
     .expertise-card {
-      min-height: 330px;
-      padding: 42px 38px;
+      min-height: 250px;
 
-      border-right: 1px solid var(--border);
+      padding: 0 20px 0 0;
+
+      position: relative;
+
+      transition:
+        transform 0.3s ease,
+        color 0.3s ease;
     }
 
-    .expertise-card:first-child {
-      border-left: 1px solid var(--border);
+    .expertise-card:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      right: -35px;
+
+      width: 1px;
+      height: 100%;
+
+      background: var(--border);
     }
 
-    .expertise-card:last-child {
-      border-right: 1px solid var(--border);
+    .expertise-card:hover {
+      transform: translateY(-4px);
     }
 
-    .expertise-number {
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      margin-bottom: 70px;
-    }
+    .card-title {
+      margin-top: 0;
 
-    .expertise-card h3 {
-      margin-bottom: 20px;
-
-      font-size: 28px;
-      line-height: 1.05;
+      font-size: 30px;
       font-weight: 400;
+
       letter-spacing: -0.025em;
+
+      transition: color 0.25s ease;
     }
 
-    .expertise-card p {
-      max-width: 320px;
+    .expertise-card:hover .card-title {
+      color: var(--gold);
+    }
+
+    .card-description {
+      max-width: 340px;
+
+      margin-top: 22px;
 
       color: var(--cream-muted);
+
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    /* =========================
+
+    /* =========================================
        APPROACH
-    ========================= */
+       ========================================= */
 
     .approach {
-      padding-top: 40px;
-      padding-bottom: 150px;
+      padding: 150px 0;
+
+      background: var(--green-light);
     }
 
     .approach-intro {
-      max-width: 850px;
-      margin-bottom: 70px;
+      max-width: 900px;
+
+      margin-bottom: 90px;
     }
 
     .approach-intro h2 {
-      margin-top: 24px;
+      max-width: 850px;
 
-      font-size: 58px;
-      line-height: 0.98;
+      margin-top: 22px;
+
+      font-size: clamp(
+        42px,
+        5.5vw,
+        76px
+      );
+
       font-weight: 400;
-      letter-spacing: -0.045em;
+
+      line-height: 1;
+
+      letter-spacing: -0.05em;
+    }
+
+    .approach-intro h2 span {
+      color: var(--gold);
     }
 
     .approach-lead {
       max-width: 650px;
-      margin-top: 30px;
+
+      margin-top: 35px;
 
       color: var(--cream-muted);
-      font-size: 16px;
-      line-height: 1.7;
+
+      font-size: 17px;
+      line-height: 1.8;
     }
 
     .approach-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 70px;
 
       border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+
+      padding-top: 55px;
     }
 
     .approach-card {
-      min-height: 360px;
-      padding: 38px;
+      background: transparent;
 
-      border-right: 1px solid var(--border);
+      padding: 0 20px 0 0;
+
+      min-height: 300px;
+
+      position: relative;
     }
 
-    .approach-card:first-child {
-      border-left: 1px solid var(--border);
-    }
+    .approach-card:not(:last-child)::after {
+      content: "";
 
-    .approach-number {
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      margin-bottom: 75px;
+      position: absolute;
+
+      top: 0;
+      right: -35px;
+
+      width: 1px;
+      height: 100%;
+
+      background: var(--border);
     }
 
     .approach-card h3 {
-      margin-bottom: 20px;
+      margin-top: 0;
 
-      font-size: 25px;
-      line-height: 1.1;
+      font-size: 28px;
       font-weight: 400;
+
+      line-height: 1.1;
+
+      letter-spacing: -0.03em;
     }
 
     .approach-card p {
+      max-width: 400px;
+
+      margin-top: 22px;
+
       color: var(--cream-muted);
+
       font-size: 14px;
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
-    /* =========================
+
+    /* =========================================
+       RECRUITMENT PROCESS TIMELINE
+       ========================================= */
+
+    .process {
+      padding: 150px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .process-intro {
+      max-width: 900px;
+
+      margin-bottom: 90px;
+    }
+
+    .process-intro h2 {
+      max-width: 900px;
+
+      margin-top: 22px;
+
+      font-size: clamp(
+        42px,
+        5.5vw,
+        76px
+      );
+
+      font-weight: 400;
+
+      line-height: 1;
+
+      letter-spacing: -0.05em;
+    }
+
+    .process-intro h2 span {
+      color: var(--gold);
+    }
+
+    .process-intro p {
+      max-width: 650px;
+
+      margin-top: 35px;
+
+      color: var(--cream-muted);
+
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .timeline {
+      position: relative;
+
+      border-top: 1px solid var(--border);
+
+      padding-top: 55px;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+
+      top: 55px;
+      bottom: 0;
+
+      left: 24px;
+
+      width: 1px;
+
+      background: var(--border);
+    }
+
+    .timeline-item {
+      display: grid;
+
+      grid-template-columns:
+        75px
+        minmax(0, 1fr);
+
+      gap: 40px;
+
+      position: relative;
+
+      padding-bottom: 65px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-number {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+      z-index: 2;
+
+      background: var(--green);
+
+      border: 1px solid var(--gold);
+
+      border-radius: 50%;
+
+      color: var(--gold);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.08em;
+    }
+
+    .timeline-content {
+      padding-top: 3px;
+    }
+
+    .timeline-content h3 {
+      font-size: 28px;
+      font-weight: 400;
+
+      line-height: 1.15;
+
+      letter-spacing: -0.03em;
+    }
+
+    .timeline-content p {
+      max-width: 720px;
+
+      margin-top: 18px;
+
+      color: var(--cream-muted);
+
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =========================================
+       CANDIDATE FORM
+       ========================================= */
+
+    .candidates {
+      padding: 150px 0;
+
+      background: var(--green-light);
+
+      border-top: 1px solid var(--border);
+    }
+
+    .candidate-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(250px, 0.8fr)
+        minmax(400px, 1.2fr);
+
+      gap: 100px;
+
+      align-items: start;
+    }
+
+    .candidate-intro h2 {
+      max-width: 700px;
+
+      margin-top: 22px;
+
+      font-size: clamp(
+        42px,
+        5.5vw,
+        76px
+      );
+
+      font-weight: 400;
+
+      line-height: 1;
+
+      letter-spacing: -0.05em;
+    }
+
+    .candidate-intro h2 span {
+      color: var(--gold);
+    }
+
+    .candidate-intro p {
+      max-width: 500px;
+
+      margin-top: 35px;
+
+      color: var(--cream-muted);
+
+      font-size: 16px;
+
+      line-height: 1.8;
+    }
+
+    .candidate-note {
+      margin-top: 25px;
+
+      color: rgba(247, 242, 232, 0.48);
+
+      font-size: 12px;
+
+      line-height: 1.7;
+    }
+
+    .candidate-form {
+      width: 100%;
+    }
+
+    .form-row {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 22px;
+    }
+
+    .form-field {
+      margin-bottom: 22px;
+    }
+
+    .form-field.full {
+      width: 100%;
+    }
+
+    .form-field label {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: var(--gold);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+
+      padding: 16px 0;
+
+      border: 0;
+      border-bottom: 1px solid var(--border);
+
+      outline: none;
+
+      background: transparent;
+
+      color: var(--cream);
+
+      font-size: 15px;
+
+      border-radius: 0;
+
+      transition:
+        border-color 0.25s ease;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-bottom-color: var(--gold);
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(247, 242, 232, 0.32);
+    }
+
+    .form-field textarea {
+      min-height: 140px;
+
+      resize: vertical;
+
+      line-height: 1.7;
+    }
+
+    .file-upload {
+      margin-top: 12px;
+
+      padding: 22px;
+
+      border: 1px dashed var(--border);
+
+      transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .file-upload:hover {
+      border-color: var(--gold);
+
+      background: rgba(199, 164, 92, 0.025);
+    }
+
+    .file-upload input {
+      width: 100%;
+
+      color: var(--cream-muted);
+
+      font-size: 13px;
+
+      border: 0;
+
+      padding: 0;
+
+      cursor: pointer;
+    }
+
+    .file-upload input::file-selector-button {
+      margin-right: 14px;
+
+      padding: 10px 14px;
+
+      border: 1px solid var(--gold);
+
+      background: transparent;
+
+      color: var(--cream);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    .file-help {
+      margin-top: 10px;
+
+      color: rgba(247, 242, 232, 0.45);
+
+      font-size: 11px;
+    }
+
+    .form-submit {
+      margin-top: 28px;
+    }
+
+    .form-submit .button {
+      cursor: pointer;
+
+      background: transparent;
+    }
+
+    .form-submit .button:hover {
+      background: var(--gold);
+    }
+
+
+    /* =========================================
        TEAM
-    ========================= */
+       ========================================= */
 
     .team {
-      padding-bottom: 150px;
+      padding: 150px 0;
+
+      border-top: 1px solid var(--border);
     }
 
     .team-intro {
       display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
+
+      grid-template-columns:
+        minmax(180px, 0.65fr)
+        minmax(300px, 1.35fr);
+
       gap: 80px;
 
-      margin-bottom: 65px;
+      margin-bottom: 90px;
     }
 
     .team-heading {
       max-width: 800px;
 
-      font-size: 53px;
-      line-height: 1;
+      font-size: clamp(
+        40px,
+        5vw,
+        70px
+      );
+
       font-weight: 400;
-      letter-spacing: -0.04em;
+
+      line-height: 1;
+
+      letter-spacing: -0.045em;
+    }
+
+    .team-heading span {
+      color: var(--gold);
+    }
+
+    .team-description {
+      max-width: 650px;
+
+      margin-top: 30px;
+
+      color: var(--cream-muted);
+
+      font-size: 16px;
+
+      line-height: 1.8;
     }
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
 
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 1px;
+
+      background: var(--border);
     }
 
     .team-card {
+      background: var(--green);
+
+      padding: 40px 35px 45px;
+
       min-height: 390px;
-      padding: 38px;
 
-      border-right: 1px solid var(--border);
+      display: flex;
+
+      flex-direction: column;
     }
 
-    .team-card:first-child {
-      border-left: 1px solid var(--border);
+    .team-card-name {
+      font-size: 27px;
+
+      font-weight: 400;
+
+      letter-spacing: -0.025em;
     }
 
-    .team-role {
+    .team-card-role {
+      margin-top: 10px;
+
       color: var(--gold);
-      font-size: 9px;
-      letter-spacing: 0.14em;
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      letter-spacing: 0.13em;
+
       text-transform: uppercase;
     }
 
-    .team-card h3 {
-      margin-top: 16px;
-      margin-bottom: 20px;
+    .team-card-bio {
+      margin-top: 55px;
 
-      font-size: 28px;
-      line-height: 1;
-      font-weight: 400;
-    }
-
-    .team-card p {
       color: var(--cream-muted);
-      font-size: 13px;
+
+      font-size: 14px;
+
       line-height: 1.75;
     }
 
-    .team-contact {
-      margin-top: 28px;
+    .team-card-contact {
+      margin-top: auto;
 
-      font-size: 11px;
-      line-height: 1.8;
+      padding-top: 35px;
     }
 
-    .team-contact a {
-      color: var(--gold-light);
+    .team-card-contact a {
+      display: block;
+
+      color: var(--cream);
+
+      font-size: 12px;
+
+      transition: color 0.25s ease;
     }
 
-    /* =========================
+    .team-card-contact a:hover {
+      color: var(--gold);
+    }
+
+    .team-card-phone {
+      margin-top: 7px;
+
+      color: var(--cream-muted);
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================
        CONTACT
-    ========================= */
+       ========================================= */
 
     .contact {
-      padding-top: 40px;
-      padding-bottom: 150px;
+      padding: 180px 0;
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-top: 1px solid var(--border);
     }
 
-    .contact-inner {
-      border-top: 1px solid var(--border);
-      padding-top: 75px;
+    .contact::after {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -250px;
+      bottom: -250px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(199, 164, 92, 0.14);
+
+      pointer-events: none;
+    }
+
+    .contact-content {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 1000px;
     }
 
     .contact h2 {
-      max-width: 900px;
+      max-width: 1000px;
 
-      font-size: 68px;
-      line-height: 0.95;
+      margin-top: 25px;
+
+      font-size: clamp(
+        50px,
+        7vw,
+        100px
+      );
+
       font-weight: 400;
-      letter-spacing: -0.045em;
+
+      line-height: 0.96;
+
+      letter-spacing: -0.055em;
     }
 
-    .contact-copy {
-      max-width: 580px;
-      margin-top: 32px;
+    .contact h2 span {
+      color: var(--gold);
+    }
+
+    .contact-description {
+      max-width: 570px;
+
+      margin-top: 45px;
 
       color: var(--cream-muted);
-      font-size: 15px;
+
+      font-size: 17px;
+
       line-height: 1.75;
     }
 
     .contact-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      margin-top: 38px;
-      padding: 17px 28px;
-
-      background: var(--gold);
-      color: var(--green);
-
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-
-      transition: background 0.2s ease;
+      margin-top: 42px;
     }
 
-    .contact-button:hover {
-      background: var(--gold-light);
-    }
 
-    /* =========================
+    /* =========================================
        FOOTER
-    ========================= */
+       ========================================= */
 
     footer {
       border-top: 1px solid var(--border);
+
+      padding: 35px 0;
     }
 
     .footer-inner {
-      min-height: 100px;
-
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
 
-      color: var(--cream-muted);
-      font-size: 9px;
-      letter-spacing: 0.1em;
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .footer-copy,
+    .footer-specialisms {
+      color: rgba(247, 242, 232, 0.45);
+
+      font-size: 10px;
+
+      letter-spacing: 0.13em;
+
       text-transform: uppercase;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+    .footer-specialisms {
+      color: var(--gold);
+    }
+
+
+    /* =========================================
+       RESPONSIVE — TABLET
+       ========================================= */
 
     @media (max-width: 900px) {
 
@@ -519,49 +1233,72 @@
         grid-template-columns: 1fr;
       }
 
+      .expertise-grid,
+      .approach-grid {
+        gap: 0;
+
+        padding-top: 0;
+
+        border-top: none;
+      }
+
       .expertise-card {
         min-height: auto;
-        border-left: 1px solid var(--border);
-        border-right: 1px solid var(--border);
+
+        padding: 35px 0;
+
         border-bottom: 1px solid var(--border);
       }
 
-      .expertise-card:last-child {
-        border-bottom: none;
+      .expertise-card:first-child {
+        border-top: 1px solid var(--border);
+      }
+
+      .expertise-card:not(:last-child)::after {
+        display: none;
       }
 
       .approach-card {
         min-height: auto;
-        border-left: 1px solid var(--border);
-        border-right: 1px solid var(--border);
+
+        padding: 35px 0;
+
         border-bottom: 1px solid var(--border);
       }
 
-      .approach-card:last-child {
-        border-bottom: none;
+      .approach-card:first-child {
+        border-top: 1px solid var(--border);
+      }
+
+      .approach-card:not(:last-child)::after {
+        display: none;
       }
 
       .team-card {
         min-height: 340px;
-        border-left: 1px solid var(--border);
-        border-right: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
       }
 
-      .team-card:last-child {
-        border-bottom: none;
-      }
-
+      .team-intro,
       .intro-grid,
-      .team-intro {
+      .candidate-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+
+        gap: 45px;
       }
 
-      .hero h1 {
-        font-size: 58px;
+      .candidate-grid {
+        gap: 70px;
+      }
+
+      .process-intro {
+        margin-bottom: 70px;
       }
     }
+
+
+    /* =========================================
+       RESPONSIVE — MOBILE
+       ========================================= */
 
     @media (max-width: 800px) {
 
@@ -571,6 +1308,7 @@
 
       .nav-links {
         gap: 16px;
+
         font-size: 9px;
       }
 
@@ -579,274 +1317,355 @@
       }
 
       .hero {
-        padding-top: 78px;
+        min-height: auto;
+
+        padding-top: 160px;
+        padding-bottom: 100px;
       }
 
-      .hero-inner {
-        padding-top: 90px;
-        padding-bottom: 90px;
+      .hero::before {
+        width: 400px;
+        height: 400px;
+
+        right: -250px;
       }
 
       .hero h1 {
-        font-size: 56px;
+        font-size: clamp(
+          50px,
+          13vw,
+          82px
+        );
+      }
+
+      .hero-bottom {
+        display: block;
+
+        margin-top: 45px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-cta {
+        margin-top: 35px;
       }
 
       .intro,
       .expertise,
       .approach,
-      .team,
+      .process,
+      .candidates,
+      .team {
+        padding: 100px 0;
+      }
+
+      .approach-intro,
+      .process-intro {
+        margin-bottom: 60px;
+      }
+
+      .approach-card {
+        padding: 35px 0;
+      }
+
+      .timeline {
+        padding-top: 40px;
+      }
+
+      .timeline::before {
+        top: 40px;
+        left: 20px;
+      }
+
+      .timeline-item {
+        grid-template-columns:
+          60px
+          minmax(0, 1fr);
+
+        gap: 25px;
+
+        padding-bottom: 50px;
+      }
+
+      .timeline-number {
+        width: 40px;
+        height: 40px;
+
+        font-size: 10px;
+      }
+
+      .timeline-content h3 {
+        font-size: 24px;
+      }
+
+      .timeline-content p {
+        font-size: 14px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+      }
+
+      .candidate-grid {
+        gap: 55px;
+      }
+
+      .team-intro {
+        margin-bottom: 60px;
+      }
+
       .contact {
-        padding-bottom: 110px;
+        padding: 120px 0;
       }
 
-      .intro-heading,
-      .team-heading {
-        font-size: 48px;
+      .footer-inner {
+        display: block;
       }
 
-      .approach-intro h2 {
-        font-size: 52px;
-      }
-
-      .contact h2 {
-        font-size: 60px;
+      .footer-specialisms {
+        margin-top: 15px;
       }
     }
+
+
+    /* =========================================
+       RESPONSIVE — SMALL MOBILE
+       ========================================= */
 
     @media (max-width: 520px) {
 
       :root {
-        --side-padding: 18px;
+        --side-padding: 22px;
       }
 
-      .nav-inner {
-        min-height: 72px;
-        gap: 14px;
-      }
-
-      .logo {
-        font-size: 9px;
-        letter-spacing: 0.12em;
-        white-space: nowrap;
+      .nav-links a:nth-child(2) {
+        display: none;
       }
 
       .nav-links {
-        flex: 1;
-        justify-content: flex-end;
-        gap: 10px;
-
-        font-size: 8px;
-        letter-spacing: 0.07em;
-
-        white-space: nowrap;
-      }
-
-      .nav-links a {
-        display: block;
-      }
-
-      .hero {
-        padding-top: 72px;
-      }
-
-      .hero-inner {
-        padding-top: 80px;
-        padding-bottom: 80px;
-      }
-
-      .hero-eyebrow {
-        margin-bottom: 25px;
+        gap: 14px;
       }
 
       .hero h1 {
-        font-size: 48px;
-        line-height: 0.98;
-      }
-
-      .hero-copy {
-        margin-top: 30px;
-        font-size: 14px;
-      }
-
-      .intro {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        font-size: 50px;
       }
 
       .intro-heading {
         font-size: 43px;
       }
 
-      .section-title {
-        font-size: 42px;
-      }
-
-      .expertise {
-        padding-bottom: 100px;
-      }
-
-      .expertise-card {
-        padding: 30px;
-      }
-
-      .expertise-number {
-        margin-bottom: 50px;
-      }
-
-      .expertise-card h3 {
-        font-size: 25px;
-      }
-
-      .approach {
-        padding-top: 20px;
-        padding-bottom: 100px;
-      }
-
-      .approach-intro h2 {
+      .approach-intro h2,
+      .process-intro h2,
+      .candidate-intro h2 {
         font-size: 48px;
-      }
-
-      .approach-card,
-      .team-card {
-        padding: 30px;
-      }
-
-      .team {
-        padding-bottom: 100px;
       }
 
       .team-heading {
         font-size: 43px;
       }
 
-      .contact {
-        padding-bottom: 100px;
+      .expertise-card,
+      .approach-card {
+        padding: 30px 0;
       }
 
       .contact h2 {
         font-size: 54px;
       }
 
-      .contact-button {
+      .button {
         width: 100%;
       }
 
-      .footer-inner {
-        min-height: 90px;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 8px;
+      .file-upload {
+        padding: 18px;
       }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- =========================
-       NAV
-  ========================= -->
 
-  <nav class="nav">
+  <!-- ======================================
+       NAVIGATION
+       ====================================== -->
+
+  <header class="nav">
+
     <div class="nav-inner">
 
-      <a href="#top" class="logo">
+      <a href="#" class="logo">
         FINEXUS <span>PARTNERS</span>
       </a>
 
-      <div class="nav-links">
-        <a href="#expertise">Expertise</a>
-        <a href="#approach">Approach</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <nav class="nav-links">
 
-    </div>
-  </nav>
-
-
-  <main id="top">
-
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <section class="hero">
-      <div class="hero-inner">
-
-        <div class="hero-eyebrow eyebrow">
-          Specialist Search · London &amp; Global
-        </div>
-
-        <h1>
-          Where exceptional <em>talent</em> meets the next opportunity
-        </h1>
-
-        <p class="hero-copy">
-          Finexus Partners is a specialist search firm focused on the
-          people shaping FX, payments and financial technology.
-        </p>
-
-        <a href="#contact" class="hero-button">
-          Start a conversation
+        <a href="#expertise">
+          Expertise
         </a>
 
+        <a href="#approach">
+          Approach
+        </a>
+
+        <a href="#team">
+          Team
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ======================================
+       MAIN
+       ====================================== -->
+
+  <main>
+
+
+    <!-- ======================================
+         HERO
+         ====================================== -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            Specialist Search · London & Global
+          </div>
+
+          <h1>
+            Where exceptional
+            <em>talent</em> meets the
+            next opportunity
+          </h1>
+
+          <div class="hero-bottom">
+
+            <p class="hero-description">
+
+              Finexus Partners is a specialist search firm
+              focused on FX, payments and financial
+              technology
+
+              <br><br>
+
+              We connect ambitious firms with people who
+              understand the markets they move in
+
+            </p>
+
+            <div class="hero-cta">
+
+              <a
+                href="#contact"
+                class="button"
+              >
+                Start a conversation
+
+                <span class="button-arrow">
+                  →
+                </span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
 
 
-    <!-- =========================
+    <!-- ======================================
          INTRO
-    ========================= -->
+         ====================================== -->
 
     <section class="intro">
+
       <div class="container">
 
         <div class="intro-grid">
 
-          <div class="eyebrow">
-            Market Intelligence
+          <div>
+
+            <div class="section-label">
+              Market Intelligence
+            </div>
+
           </div>
 
-          <h2 class="intro-heading">
-            Built for the people shaping how money moves.
-          </h2>
+          <div>
+
+            <h2 class="intro-heading">
+
+              Built for the people
+              <span>shaping how money moves</span>
+
+            </h2>
+
+          </div>
 
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- =========================
+    <!-- ======================================
          EXPERTISE
-    ========================= -->
+         ====================================== -->
 
-    <section class="expertise" id="expertise">
+    <section
+      class="expertise"
+      id="expertise"
+    >
+
       <div class="container">
 
-        <div class="expertise-heading">
-          <div class="eyebrow">
-            Expertise
-          </div>
-        </div>
+        <!--
+          No large expertise title here.
+          The three specialist areas remain below.
+        -->
 
         <div class="expertise-grid">
 
+
           <article class="expertise-card">
 
-            <div class="expertise-number">
-              01
-            </div>
-
-            <h3>
+            <h3 class="card-title">
               FX Markets
             </h3>
 
-            <p>
-              Corporate and institutional FX, trading, sales, product
-              and market infrastructure.
+            <p class="card-description">
+
+              Corporate and institutional FX,
+              trading, sales, product and
+              market infrastructure
+
             </p>
 
           </article>
@@ -854,17 +1673,16 @@
 
           <article class="expertise-card">
 
-            <div class="expertise-number">
-              02
-            </div>
-
-            <h3>
+            <h3 class="card-title">
               Payments
             </h3>
 
-            <p>
-              Acquiring, issuing, embedded finance, payment technology
-              and the infrastructure behind modern money movement.
+            <p class="card-description">
+
+              Acquiring, issuing, embedded finance,
+              payment technology and the infrastructure
+              behind modern money movement
+
             </p>
 
           </article>
@@ -872,47 +1690,59 @@
 
           <article class="expertise-card">
 
-            <div class="expertise-number">
-              03
-            </div>
-
-            <h3>
-              Leadership &amp; Growth
+            <h3 class="card-title">
+              Leadership & Growth
             </h3>
 
-            <p>
-              Commercial leaders, senior specialists and operators
-              ready to build the next phase of ambitious businesses.
+            <p class="card-description">
+
+              Commercial leaders, senior specialists
+              and operators ready to build the next
+              phase of ambitious businesses
+
             </p>
 
           </article>
+
 
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- =========================
+    <!-- ======================================
          APPROACH
-    ========================= -->
+         ====================================== -->
 
-    <section class="approach" id="approach">
+    <section
+      class="approach"
+      id="approach"
+    >
+
       <div class="container">
 
         <div class="approach-intro">
 
-          <div class="eyebrow">
+          <div class="section-label">
             Our Approach
           </div>
 
           <h2>
-            Recruitment advice with the long view in mind
+
+            Recruitment advice
+            with the <span>long view</span>
+            in mind
+
           </h2>
 
           <p class="approach-lead">
-            The best outcomes come from thoughtful conversations,
-            honest advice and partnerships built to last.
+
+            The best outcomes come from thoughtful
+            conversations, honest advice and partnerships
+            built to last
+
           </p>
 
         </div>
@@ -920,39 +1750,40 @@
 
         <div class="approach-grid">
 
-          <article class="approach-card">
 
-            <div class="approach-number">
-              01
-            </div>
+          <article class="approach-card">
 
             <h3>
               Consultative by nature
             </h3>
 
             <p>
-              We take the time to understand the role, the business,
-              the market and what success genuinely looks like before
-              beginning a search.
+
+              We start with the context behind the brief.
+              Understanding your business, your team,
+              your ambitions and the market around you
+              allows us to make recommendations that are
+              considered, relevant and practical.
+
             </p>
 
           </article>
 
 
           <article class="approach-card">
-
-            <div class="approach-number">
-              02
-            </div>
 
             <h3>
               Best intentions, always
             </h3>
 
             <p>
-              Straightforward advice sits at the centre of how we work.
-              We say what we believe is right for the client and
-              candidate, even when the answer isn't the easiest one.
+
+              Our advice is direct, discreet and grounded
+              in what we believe is right for both sides.
+              We take the time to understand motivations,
+              expectations and long-term objectives so that
+              every conversation has genuine purpose.
+
             </p>
 
           </article>
@@ -960,167 +1791,275 @@
 
           <article class="approach-card">
 
-            <div class="approach-number">
-              03
-            </div>
-
             <h3>
               Relationships that endure
             </h3>
 
             <p>
-              Our work doesn't end when a placement is made. We build
-              relationships that continue through careers, leadership
-              changes and the evolution of businesses.
+
+              The strongest partnerships are built over time.
+              We are here for the mandate that matters today,
+              the career move that comes next and the market
+              conversation that may lead somewhere further
+              down the line.
+
             </p>
 
           </article>
+
 
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- =========================
-         TEAM
-    ========================= -->
+    <!-- ======================================
+         RECRUITMENT PROCESS
+         ====================================== -->
 
-    <section class="team" id="team">
+    <section
+      class="process"
+      id="process"
+    >
+
       <div class="container">
 
-        <div class="team-intro">
+        <div class="process-intro">
 
-          <div class="eyebrow">
-            The Team
-          </div>
-
-          <h2 class="team-heading">
-            Experience, relationships and market knowledge.
-          </h2>
-
-        </div>
-
-
-        <div class="team-grid">
-
-          <article class="team-card">
-
-            <div class="team-role">
-              Managing Partner
-            </div>
-
-            <h3>
-              Emma Salmon
-            </h3>
-
-            <p>
-              Emma works closely with senior leaders and ambitious
-              businesses across the financial markets, building
-              long-term relationships and leading specialist searches.
-            </p>
-
-            <div class="team-contact">
-              <a href="mailto:hello@finexuspartners.com">
-                hello@finexuspartners.com
-              </a>
-            </div>
-
-          </article>
-
-
-          <article class="team-card">
-
-            <div class="team-role">
-              Partner
-            </div>
-
-            <h3>
-              Will Palmer
-            </h3>
-
-            <p>
-              Will specialises in senior appointments across FX,
-              payments and financial technology, connecting high-calibre
-              professionals with businesses entering their next phase.
-            </p>
-
-            <div class="team-contact">
-              <a href="mailto:hello@finexuspartners.com">
-                hello@finexuspartners.com
-              </a>
-            </div>
-
-          </article>
-
-
-          <article class="team-card">
-
-            <div class="team-role">
-              Partner
-            </div>
-
-            <h3>
-              Tom Fisher
-            </h3>
-
-            <p>
-              Tom brings a market-led approach to executive search,
-              working with founders, investors and leadership teams
-              across the evolving financial technology landscape.
-            </p>
-
-            <div class="team-contact">
-              <a href="mailto:hello@finexuspartners.com">
-                hello@finexuspartners.com
-              </a>
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =========================
-         CONTACT
-    ========================= -->
-
-    <section class="contact" id="contact">
-      <div class="container">
-
-        <div class="contact-inner">
-
-          <div class="eyebrow">
-            Let's Talk
+          <div class="section-label">
+            The Process
           </div>
 
           <h2>
-            A mandate, a move, or a market conversation
+
+            A focused approach to
+            finding the <span>right people</span>
+
           </h2>
 
-          <p class="contact-copy">
-            Whether you're building a team, considering your next move,
-            or simply want to understand what's happening in the market,
-            we'd be glad to talk.
+          <p>
+
+            We work closely with businesses from the
+            initial conversation through to securing the
+            right candidate.
+
           </p>
 
-          <!--
-            FORM / CONTACT LINK
+        </div>
 
-            This now sends to:
+
+        <div class="timeline">
+
+
+          <!-- STEP 1 -->
+
+          <div class="timeline-item">
+
+            <div class="timeline-number">
+              01
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Partner with and consult with businesses
+              </h3>
+
+              <p>
+
+                We begin by partnering closely with the
+                business, taking the time to understand the
+                wider context behind the requirement and
+                providing informed recruitment advice.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- STEP 2 -->
+
+          <div class="timeline-item">
+
+            <div class="timeline-number">
+              02
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Learn the business and understand the need
+              </h3>
+
+              <p>
+
+                We learn how the business operates, understand
+                its needs and objectives, and establish exactly
+                what it wants to achieve. This gives us the
+                clarity needed to define the right profile.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- STEP 3 -->
+
+          <div class="timeline-item">
+
+            <div class="timeline-number">
+              03
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Targeted headhunting
+              </h3>
+
+              <p>
+
+                With the brief and objectives clearly defined,
+                we undertake targeted headhunting to identify
+                individuals whose experience, capabilities and
+                ambitions align with the business and its goals.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- STEP 4 -->
+
+          <div class="timeline-item">
+
+            <div class="timeline-number">
+              04
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Manage interviews, negotiations and securing the right candidate
+              </h3>
+
+              <p>
+
+                We manage the process through interviews,
+                feedback and negotiations, maintaining momentum
+                and supporting both sides through to securing
+                the right candidate.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         CANDIDATE FORM
+         ====================================== -->
+
+    <section
+      class="candidates"
+      id="candidates"
+    >
+
+      <div class="container">
+
+        <div class="candidate-grid">
+
+
+          <div class="candidate-intro">
+
+            <div class="section-label">
+              Candidates
+            </div>
+
+            <h2>
+
+              Your next
+              <span>opportunity</span>
+              starts here
+
+            </h2>
+
+            <p>
+
+              If you're considering your next move within
+              FX, payments or financial technology, we'd
+              like to hear from you.
+
+            </p>
+
+            <p class="candidate-note">
+
+              Submit your details and CV below. CVs must
+              be submitted as PDF files.
+
+            </p>
+
+          </div>
+
+
+          <!--
+            FORM SUBMISSION
+
+            FormSubmit handles the form because this is
+            a static GitHub Pages website.
+
+            Recipient:
             hello@finexuspartners.com
 
-            The _next URL sends the user back to:
+            Redirect:
             https://laurencemott-art.github.io/Finexus/
+
+            IMPORTANT:
+            The _next value is deliberately the exact
+            GitHub Pages URL requested.
           -->
 
           <form
+            class="candidate-form"
             action="https://formsubmit.co/hello@finexuspartners.com"
             method="POST"
+            enctype="multipart/form-data"
+            id="candidateForm"
           >
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Candidate CV — Finexus Partners"
+            >
+
+            <input
+              type="hidden"
+              name="_template"
+              value="table"
+            >
+
+            <input
+              type="hidden"
+              name="_captcha"
+              value="true"
+            >
 
             <input
               type="hidden"
@@ -1128,57 +2067,539 @@
               value="https://laurencemott-art.github.io/Finexus/"
             >
 
-            <input
-              type="hidden"
-              name="_subject"
-              value="New Finexus Partners enquiry"
-            >
+
+            <!-- Honeypot spam protection -->
 
             <input
-              type="hidden"
-              name="_captcha"
-              value="false"
+              type="text"
+              name="_honey"
+              tabindex="-1"
+              autocomplete="off"
+              style="
+                position:absolute;
+                left:-9999px;
+                opacity:0;
+                height:0;
+                width:0;
+                pointer-events:none;
+              "
             >
 
-            <button
-              type="submit"
-              class="contact-button"
-            >
-              Get in touch
-            </button>
+
+            <!-- NAME + PHONE -->
+
+            <div class="form-row">
+
+
+              <div class="form-field">
+
+                <label for="candidate-name">
+                  Name
+                </label>
+
+                <input
+                  id="candidate-name"
+                  type="text"
+                  name="name"
+                  placeholder="Your full name"
+                  autocomplete="name"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="candidate-phone">
+                  Phone Number
+                </label>
+
+                <input
+                  id="candidate-phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="Your phone number"
+                  autocomplete="tel"
+                  required
+                >
+
+              </div>
+
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-field full">
+
+              <label for="candidate-email">
+                Email
+              </label>
+
+              <input
+                id="candidate-email"
+                type="email"
+                name="email"
+                placeholder="Your email address"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-field full">
+
+              <label for="candidate-message">
+                Message / Notes
+              </label>
+
+              <textarea
+                id="candidate-message"
+                name="message"
+                placeholder="Tell us a little about yourself, your experience or the type of opportunity you're looking for..."
+              ></textarea>
+
+            </div>
+
+
+            <!-- CV -->
+
+            <div class="form-field full">
+
+              <label for="candidate-cv">
+                CV — PDF Only
+              </label>
+
+              <div class="file-upload">
+
+                <input
+                  id="candidate-cv"
+                  type="file"
+                  name="attachment"
+                  accept="application/pdf,.pdf"
+                  required
+                >
+
+                <div class="file-help">
+                  PDF files only · Maximum file size 10MB
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <div class="form-submit">
+
+              <button
+                type="submit"
+                class="button"
+              >
+
+                Submit your CV
+
+                <span class="button-arrow">
+                  →
+                </span>
+
+              </button>
+
+            </div>
+
 
           </form>
+
 
         </div>
 
       </div>
+
     </section>
+
+
+    <!-- ======================================
+         TEAM
+         ====================================== -->
+
+    <section
+      class="team"
+      id="team"
+    >
+
+      <div class="container">
+
+        <div class="team-intro">
+
+
+          <div>
+
+            <div class="section-label">
+              The Finexus Team
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <h2 class="team-heading">
+
+              Specialist knowledge
+              <span>Market perspective</span>
+
+            </h2>
+
+            <p class="team-description">
+
+              Our team combines first-hand experience
+              of FX and payments with a focused approach
+              to specialist search
+
+              <br><br>
+
+              We understand the markets we recruit within,
+              the people who shape them and the businesses
+              looking to build what comes next
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="team-grid">
+
+
+          <!-- EMMA -->
+
+          <article class="team-card">
+
+            <div class="team-card-name">
+              Emma Salmon
+            </div>
+
+            <div class="team-card-role">
+              Senior Leadership · FX & Payments
+            </div>
+
+            <p class="team-card-bio">
+
+              Emma brings extensive experience across
+              FX and payments to senior appointments
+              at every level
+
+              <br><br>
+
+              Her focus is on leadership and C-level
+              mandates, partnering with businesses to
+              identify the individuals capable of shaping
+              their next stage of growth
+
+            </p>
+
+            <div class="team-card-contact">
+
+              <a href="mailto:emma@finexuspartners.com">
+                emma@finexuspartners.com
+              </a>
+
+              <div class="team-card-phone">
+                07730 618536
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- WILL -->
+
+          <article class="team-card">
+
+            <div class="team-card-name">
+              Will Palmer
+            </div>
+
+            <div class="team-card-role">
+              Front Office · B2B & FX Sales
+            </div>
+
+            <p class="team-card-bio">
+
+              Will began his career in FX and payments
+              sales, giving him first-hand experience
+              of the market he now recruits within
+
+              <br><br>
+
+              He specialises in front-office appointments
+              across the global FX and payments industry,
+              covering sales, dealing, trading and
+              commercial leadership
+
+            </p>
+
+            <div class="team-card-contact">
+
+              <a href="mailto:will@finexuspartners.com">
+                will@finexuspartners.com
+              </a>
+
+              <div class="team-card-phone">
+                07810 308392
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- TOM -->
+
+          <article class="team-card">
+
+            <div class="team-card-name">
+              Tom Fisher
+            </div>
+
+            <div class="team-card-role">
+              Middle & Back Office
+            </div>
+
+            <p class="team-card-bio">
+
+              Tom specialises in sales and middle-office
+              appointments across the global FX and
+              payments industry
+
+              <br><br>
+
+              With experience delivering appointments
+              from emerging talent through to senior
+              leadership, he brings a detailed understanding
+              of the people and capabilities that keep
+              businesses moving
+
+            </p>
+
+            <div class="team-card-contact">
+
+              <a href="mailto:tom@finexuspartners.com">
+                tom@finexuspartners.com
+              </a>
+
+              <div class="team-card-phone">
+                07364 237677
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         CONTACT
+         ====================================== -->
+
+    <section
+      class="contact"
+      id="contact"
+    >
+
+      <div class="container">
+
+        <div class="contact-content">
+
+          <div class="section-label">
+            Let's Talk
+          </div>
+
+          <h2>
+
+            A mandate, a move,
+            or a <span>market conversation</span>
+
+          </h2>
+
+          <p class="contact-description">
+
+            Speak with Finexus Partners about the people
+            and opportunities shaping the future of FX,
+            payments and financial technology
+
+          </p>
+
+          <div class="contact-button">
+
+            <a
+              href="mailto:hello@finexuspartners.com"
+              class="button"
+            >
+
+              Get in touch
+
+              <span class="button-arrow">
+                →
+              </span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
 
   </main>
 
 
-  <!-- =========================
+  <!-- ======================================
        FOOTER
-  ========================= -->
+       ====================================== -->
 
   <footer>
+
     <div class="container">
 
       <div class="footer-inner">
 
-        <div>
+        <div class="footer-copy">
           © 2026 Finexus Partners
         </div>
 
-        <div>
+        <div class="footer-specialisms">
           FX · Payments · Technology
         </div>
 
       </div>
 
     </div>
+
   </footer>
 
 
+  <!-- ======================================
+       FORM VALIDATION
+       ====================================== -->
+
+  <script>
+
+    const candidateForm =
+      document.getElementById("candidateForm");
+
+    const candidateCV =
+      document.getElementById("candidate-cv");
+
+
+    candidateForm.addEventListener(
+      "submit",
+      function(event) {
+
+        const file =
+          candidateCV.files[0];
+
+        if (!file) {
+          event.preventDefault();
+
+          alert(
+            "Please attach your CV as a PDF."
+          );
+
+          return;
+        }
+
+
+        /*
+          Check file extension.
+        */
+
+        const fileName =
+          file.name.toLowerCase();
+
+        if (
+          !fileName.endsWith(".pdf")
+        ) {
+
+          event.preventDefault();
+
+          alert(
+            "Please upload your CV as a PDF file."
+          );
+
+          candidateCV.value = "";
+
+          return;
+        }
+
+
+        /*
+          Check MIME type where the browser
+          provides it.
+        */
+
+        if (
+          file.type &&
+          file.type !== "application/pdf"
+        ) {
+
+          event.preventDefault();
+
+          alert(
+            "Please upload your CV as a PDF file."
+          );
+
+          candidateCV.value = "";
+
+          return;
+        }
+
+
+        /*
+          FormSubmit has a combined upload
+          limit of 10MB.
+        */
+
+        const maxSize =
+          10 * 1024 * 1024;
+
+        if (file.size > maxSize) {
+
+          event.preventDefault();
+
+          alert(
+            "Your CV is too large. Please upload a PDF smaller than 10MB."
+          );
+
+          candidateCV.value = "";
+
+          return;
+        }
+
+      }
+    );
+
+  </script>
+
+
 </body>
+
 </html>
